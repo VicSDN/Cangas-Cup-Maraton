@@ -1,0 +1,29 @@
+---
+import ResultItem from "../components/ResultItem.astro";
+---
+
+<section
+  class={`
+    w-full max-w-[1400px]
+    grid lg:grid-cols-10 auto-rows-[30rem] gap-4
+    mx-auto p-6 md:p-12 lg:p-20
+  `}
+>
+  <ResultItem
+    class="col-span-10 md:col-span-6"
+    title="Clasificacion"
+    subtitle="Lista clasificacion"
+  >
+    <div
+      slot="image"
+      class="background transition-scale absolute left-0 top-0
+        -z-10 h-full w-full bg-blue-950
+        bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
+    >
+    </div>
+    <p slot="content" class="max-w-xl">
+      
+    </p>
+  </ResultItem>
+  <ResultItem class="col-span-10 md:col-span-6" title="Lista Resultados" />
+</section>
