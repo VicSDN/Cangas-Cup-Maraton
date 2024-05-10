@@ -1,23 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import {Team, db} from "astro:db";
-const teams = await db.select()
-.from(Team)
+
 ---
 
 <Layout
   description="Lista de equipos de la Cangas Cup 2024"
   title="Lista equipos - Cangas Cup Futsal 2024"
 >
- <div> 
-  {
-    teams.map(({Team})) => (
-  <article>
-    <p>
-      Team:{Team.name}
-    </p>
-  </article>
-    )
-  }
- </div>
 </Layout>
