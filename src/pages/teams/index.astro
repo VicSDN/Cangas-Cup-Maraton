@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import {db,Team} from "astro:db"
+import {Team, db} from "astro:db";
 const teams = await db.select()
 .from(Team)
 ---
