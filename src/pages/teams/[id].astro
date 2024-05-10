@@ -1,16 +1,1 @@
----
-import Layout from "../../layouts/Layout.astro";
-import teamsData from "../../data/teamsData.json";
-export async function load({ params }) {
-  const teamId = params.id;
-  const team = teamsData.find((team) => team.id === teamId);
-  return { team };
-}
----
 
-<Layout
-  description="Lista de equipos de la Cangas Cup 2024"
-  title="Lista equipos - Cangas Cup Futsal 2024"
->
-
-</Layout>
