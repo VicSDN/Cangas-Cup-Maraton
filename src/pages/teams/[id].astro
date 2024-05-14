@@ -1,10 +1,10 @@
 ---
 import { supabase } from "../../db/supabase";
 import Layout from "../../layouts/Layout.astro";
-let { id } = Astro.params; // Obtiene el ID de los parámetros de la URL
+let { id } = Astro.params;
 
 // Consulta los datos del equipo y los jugadores
-let { data: team, error } = await supabase
+let { data: team, error: teamError } = await supabase
   .from("team")
   .select("*")
   .eq("id", id)
@@ -17,13 +17,18 @@ let { data: players, error: playerError } = await supabase
 
 export const prerender = true;
 
-// Define la función getStaticPaths
 export function getStaticPaths() {
   // Aquí debes retornar un array con los paths dinámicos que deseas prerrenderizar
-  // Por ejemplo:
+  // Por ejemplo, si tienes una página anterior que proporciona el ID:
   return [
-    { params: { id: "1" } }, // Cambia "1" por el ID de tu equipo
-    // Agrega más paths según tus necesidades
+    { params: { id: 1 } }, // Cambia "1" por el ID proporcionado desde la página anterior
+    { params: { id: 2 } },
+    { params: { id: 3 } },
+    { params: { id: 4 } },
+    { params: { id: 5} },
+    { params: { id: 6 } },
+    { params: { id: 7 } },
+    { params: { id: 8 } },
   ];
 }
 ---
@@ -42,21 +47,22 @@ export function getStaticPaths() {
     }
     <div>
       {
-        players.map((player) => (
-          <div
-            id={player.id}
-            class="w-full max-w-sm bg-blue-950 bg-blend-luminosity duration-1000 bg-cover border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
-          >
-            <div class="flex flex-col items-center pb-10">
-              <h2 class="w-full text-center text-wrap m-10 mb-3 text-xl font-bold text-blue-100 dark:text-white shadow-lg">
-                {player.name}
-              </h2>
-              <h5 class="mb-1 text-l font-medium text-blue-100 dark:text-white">
-                {player.secondName}
-              </h5>
+        players &&
+          players.map((player) => (
+            <div
+              key={player.id}
+              class="w-full max-w-sm bg-blue-950 bg-blend-luminosity duration-1000 bg-cover border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+            >
+              <div class="flex flex-col items-center pb-10">
+                <h2 class="w-full text-center text-wrap m-10 mb-3 text-xl font-bold text-blue-100 dark:text-white shadow-lg">
+                  {player.name}
+                </h2>
+                <h5 class="mb-1 text-l font-medium text-blue-100 dark:text-white">
+                  {player.secondName}
+                </h5>
+              </div>
             </div>
-          </div>
-        ))
+          ))
       }
     </div>
   </div>
