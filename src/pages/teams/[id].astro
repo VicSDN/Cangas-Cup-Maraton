@@ -1,0 +1,63 @@
+---
+import { supabase } from "../../db/supabase";
+import Layout from "../../layouts/Layout.astro";
+let { id } = Astro.params; // Obtiene el ID de los parámetros de la URL
+
+// Consulta los datos del equipo y los jugadores
+let { data: team, error } = await supabase
+  .from("team")
+  .select("*")
+  .eq("id", id)
+  .single();
+
+let { data: players, error: playerError } = await supabase
+  .from("player")
+  .select("*")
+  .eq("teamId", id);
+
+export const prerender = true;
+
+// Define la función getStaticPaths
+export function getStaticPaths() {
+  // Aquí debes retornar un array con los paths dinámicos que deseas prerrenderizar
+  // Por ejemplo:
+  return [
+    { params: { id: "1" } }, // Cambia "1" por el ID de tu equipo
+    // Agrega más paths según tus necesidades
+  ];
+}
+---
+
+<Layout description="Team Details" title="Cangas Cup Team Details">
+  <div class="flex justify-center mt-20 pt-2">
+    {
+      team && (
+        <div>
+          <h1>{team.name}</h1>
+          <p>Location: {team.location}</p>
+          <p>Group: {team.groupId}</p>
+          <p>Points: {team.points}</p>
+        </div>
+      )
+    }
+    <div>
+      {
+        players.map((player) => (
+          <div
+            id={player.id}
+            class="w-full max-w-sm bg-blue-950 bg-blend-luminosity duration-1000 bg-cover border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="flex flex-col items-center pb-10">
+              <h2 class="w-full text-center text-wrap m-10 mb-3 text-xl font-bold text-blue-100 dark:text-white shadow-lg">
+                {player.name}
+              </h2>
+              <h5 class="mb-1 text-l font-medium text-blue-100 dark:text-white">
+                {player.secondName}
+              </h5>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
