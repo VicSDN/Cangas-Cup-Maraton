@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { supabase } from "../../db/supabase";
+import Goal from "./icons/Goal.astro";
 
 let { data: players, error } = await supabase.from("player").select("*");
 
@@ -17,17 +18,41 @@ const playerStats = {
 };
 ---
 
-<Layout description="Ranking Maratón" title="">
+<Layout description="Ranking Maratón" title="Ranking Maratón">
   <div class="flex flex-wrap gap-4 p-0 m-6">
     <section class="border p-4 rounded-md flex-1 min-w-[200px] text-center">
-      <h1>MAX GOLEADORES</h1>
+      <h1 class="text-2xl border-b-2">MAX GOLEADORES</h1>
       {
         playerStats.goleadores.map((p, index) => (
-          <a href={`/jugador/${p.id}`} class="block my-4">
-            <h1>
-              {index + 1}. {p.name}
-            </h1>
-            <p>Goles: {p.goal}</p>
+          <a href={`/rankings/${p.id}`} class="block my-4 ">
+            <div
+              class="relative flex flex-col items-center justify-center text-white bg-blue-600 bg-opacity-40 shadow-md w-84 rounded-xl bg-clip-border"
+              style="max-width: 300px; margin: 0 auto;"
+            >
+              <nav class="flex flex-col gap-1 p-2 font-sans text-white">
+                <div
+                  role="button"
+                  class="flex items-center justify-center w-full mt-4  leading-tight transition-all rounded-lg outline-none text-center hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+                >
+                  <>
+                    <p class="text-2xl font-bold"> {index + 1}.</p>{" "}
+                    <p class="text-xl font-bold font-mono">
+                      {" "}
+                      {p.name} {p.secondName}
+                    </p>
+                  </>
+                </div>
+                <div
+                  role="button"
+                  class="flex items-center justify-center gap-10 w-full p-3 leading-tight transition-all rounded-lg outline-none text-center hover:bg-gray-800 hover:bg-opacity-80 hover:text-white focus:bg-gray-800 focus:bg-opacity-80 focus:text-white active:bg-gray-800 active:bg-opacity-80 active:text-white"
+                >
+                  <p class=" text-3xl ">{p.goal}</p>
+                  <p class="text-3xl ">
+                    <Goal style={{ fontSize: "45px" }} />
+                  </p>
+                </div>
+              </nav>
+            </div>
           </a>
         ))
       }
@@ -38,6 +63,7 @@ const playerStats = {
         Ver Todo
       </button>
     </section>
+
     <section class="border p-4 rounded-md flex-1 min-w-[200px]">
       <h1>ASISTENCIAS</h1>
       {
@@ -83,25 +109,28 @@ const playerStats = {
       }
     </section>
   </div>
-  <dialog id="goleadoresModal" class="p-6 border rounded-md">
+  <dialog
+    id="goleadoresModal"
+    class="p-6 border rounded-md text-center w-full h-full fixed inset-0 overflow-auto bg-gray-900 bg-opacity-90 z-50 "
+  >
     <h1 class="text-2xl mb-4">Goleadores</h1>
+    <form method="dialog">
+      <button class="mt-4 mb-4 bg-red-500 text-white px-4 py-2 rounded">
+        Cerrar
+      </button>
+    </form>
     {
       players
         .sort((a, b) => b.goal - a.goal)
         .map((p, index) => (
-          <div>
-            <h1>
+          <div class="flex flex-row text-center">
+            <h1 class="2xl">
               {index + 1}. {p.name}
             </h1>
             <p>Goles: {p.goal}</p>
           </div>
         ))
     }
-    <form method="dialog">
-      <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded">
-        Cerrar
-      </button>
-    </form>
   </dialog>
 
   <script>
