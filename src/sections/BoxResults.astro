@@ -1,29 +1,61 @@
 ---
-import ResultItem from "../components/ResultItem.astro";
+import { supabase } from "../db/supabase";
+let { data: match, error } = await supabase.from("match").select("*");
+let { data: team } = await supabase.from("team").select("*");
+function findTeam(teamId) {
+  const teamAux = team.find((t) => t.id === teamId);
+  return teamAux;
+}
 ---
 
 <section
   class={`
-    w-full max-w-[1400px]
-    grid lg:grid-cols-10 auto-rows-[30rem] gap-4
-    mx-auto p-6 md:p-12 lg:p-20
-  `}
+  w-full max-w-[1400px]
+  grid lg:grid-rows-10 auto-rows-[auto] gap-4
+  mx-auto items-center p-6 md:p-12 lg:p-20
+`}
 >
-  <ResultItem
-    class="col-span-10 md:col-span-6"
-    title="Clasificacion"
-    subtitle="Lista clasificacion"
-  >
-    <div
-      slot="image"
-      class="background transition-scale absolute left-0 top-0
-        -z-10 h-full w-full bg-blue-950
-        bg-cover bg-center bg-no-repeat opacity-90 bg-blend-luminosity duration-1000 ease-in-out group-hover:scale-110"
-    >
-    </div>
-    <p slot="content" class="max-w-xl">
-      
-    </p>
-  </ResultItem>
-  <ResultItem class="col-span-10 md:col-span-6" title="Lista Resultados" />
+  {
+    match.map((match) =>
+      match.finished === true ? (
+        <article
+          class={`
+        w-full bg-whit
+        relative rounded-xl
+        backdrop-blur-md
+        border border-black/10
+        shadow-inner shadow-white/10
+        overflow-hidden bg-slate-900
+        group
+      `}
+        >
+          <div class="relative z-20 flex h-full  flex-row items-center justify-between p-4 text-lg md:p-6">
+            <span>{findTeam(match.id_team1).name}</span>
+            <span>{match.goals_team1}</span>
+            <span>-</span>
+            <span>{match.goals_team2}</span>
+            <span>{findTeam(match.id_team2).name}</span>
+          </div>
+        </article>
+      ) : (
+        <article
+          class={`
+        w-full bg-whit
+        relative rounded-xl
+        backdrop-blur-md
+        border border-black/10
+        shadow-inner shadow-white/10
+        overflow-hidden bg-slate-900
+        group
+      `}
+        >
+          <div class="relative z-20 flex h-full  flex-row items-center justify-between p-4 text-lg md:p-6">
+            <span>{findTeam(match.id_team1).name}</span>
+            <span>-</span>
+            <span>{findTeam(match.id_team2).name}</span>
+          </div>
+        </article>
+      )
+    )
+  }
 </section>

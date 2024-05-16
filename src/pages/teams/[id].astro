@@ -3,7 +3,6 @@ import { supabase } from "../../db/supabase";
 import Layout from "../../layouts/Layout.astro";
 let { id } = Astro.params;
 
-// Consulta los datos del equipo y los jugadores
 let { data: team, error: teamError } = await supabase
   .from("team")
   .select("*")
@@ -14,25 +13,7 @@ let { data: players, error: playerError } = await supabase
   .from("player")
   .select("*")
   .eq("teamId", id);
-
-export const prerender = true;
-
-export function getStaticPaths() {
-  // Aquí debes retornar un array con los paths dinámicos que deseas prerrenderizar
-  // Por ejemplo, si tienes una página anterior que proporciona el ID:
-  return [
-    { params: { id: 1 } }, // Cambia "1" por el ID proporcionado desde la página anterior
-    { params: { id: 2 } },
-    { params: { id: 3 } },
-    { params: { id: 4 } },
-    { params: { id: 5} },
-    { params: { id: 6 } },
-    { params: { id: 7 } },
-    { params: { id: 8 } },
-  ];
-}
 ---
-
 <Layout description="Team Details" title="Cangas Cup Team Details">
   <div class="flex justify-center mt-20 pt-2">
     {
@@ -50,7 +31,6 @@ export function getStaticPaths() {
         players &&
           players.map((player) => (
             <div
-              key={player.id}
               class="w-full max-w-sm bg-blue-950 bg-blend-luminosity duration-1000 bg-cover border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
             >
               <div class="flex flex-col items-center pb-10">

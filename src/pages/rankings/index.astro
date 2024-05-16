@@ -1,50 +1,120 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { supabase } from "../../db/supabase";
-let { data: player, error } = await supabase.from("player").select("*");
+
+let { data: players, error } = await supabase.from("player").select("*");
+
+if (error) {
+  console.error("Error fetching players:", error);
+}
+
+const playerStats = {
+  goleadores: players.sort((a, b) => b.goal - a.goal).slice(0, 5),
+  asistencias: players.sort((a, b) => b.assist - a.assist).slice(0, 5),
+  mvps: players.sort((a, b) => b.mvp - a.mvp).slice(0, 5),
+  amarillas: players.sort((a, b) => b.yellowCard - a.yellowCard).slice(0, 5),
+  rojas: players.sort((a, b) => b.redCard - a.redCard).slice(0, 5),
+};
 ---
 
-<Layout
-  description="Lista de jugadores de la Cangas Cup 2024"
-  title="Lista jugadores - Cangas Cup Futsal 2024"
->
-  <article
-    class="col-span-5 relative rounded-xl backdrop-blur-md border border-black shadow-inner shadow-white overflow-hidden group m-20"
-  >
-  <ul>
-   {
-        player.map((player) => (
-
-<article
-  class="hover:animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s]"
->
-  <div class="rounded-[10px] bg-white p-4 !pt-20 sm:p-6">
-    <time datetime="2022-10-10" class="block text-xs text-gray-500">{player.teamId}</time>
-
-    <a href="#">
-      <h3 class="mt-0.5 text-lg font-medium text-gray-900">
-        {player.name} {player.secondName}
-      </h3>
-    </a>
-
-    <div class="mt-4 flex flex-wrap gap-1">
-      <span
-        class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
-      >
-        {player.goal}
-      </span>
-
-      <span
-        class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
-      >
-      
-      </span>
-    </div>
-  </div>
-</article>
-
-         ))
+<Layout description="Ranking Maratón" title="">
+  <div class="flex flex-wrap gap-4 p-0 m-6">
+    <section class="border p-4 rounded-md flex-1 min-w-[200px] text-center">
+      <h1>MAX GOLEADORES</h1>
+      {
+        playerStats.goleadores.map((p, index) => (
+          <a href={`/jugador/${p.id}`} class="block my-4">
+            <h1>
+              {index + 1}. {p.name}
+            </h1>
+            <p>Goles: {p.goal}</p>
+          </a>
+        ))
       }
-  </ul>
-  </article>
+      <button
+        class="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+        data-dialog-target="goleadoresModal"
+      >
+        Ver Todo
+      </button>
+    </section>
+    <section class="border p-4 rounded-md flex-1 min-w-[200px]">
+      <h1>ASISTENCIAS</h1>
+      {
+        playerStats.asistencias.map((p) => (
+          <div>
+            <h2>{p.name}</h2>
+            <p>{p.assist}</p>
+          </div>
+        ))
+      }
+    </section>
+    <section class="border p-4 rounded-md flex-1 min-w-[200px]">
+      <h1>MVP</h1>
+      {
+        playerStats.mvps.map((p) => (
+          <div>
+            <h2>{p.name}</h2>
+            <p>{p.mvp}</p>
+          </div>
+        ))
+      }
+    </section>
+    <section class="border p-4 rounded-md flex-1 min-w-[200px]">
+      <h1>T.AMARILLAS</h1>
+      {
+        playerStats.amarillas.map((p) => (
+          <div>
+            <h2>{p.name}</h2>
+            <p>{p.yellowCard}</p>
+          </div>
+        ))
+      }
+    </section>
+    <section class="border p-4 rounded-md flex-1 min-w-[200px]">
+      <h1>T.ROJAS</h1>
+      {
+        playerStats.rojas.map((p) => (
+          <div>
+            <h2>{p.name}</h2>
+            <p>{p.redCard}</p>
+          </div>
+        ))
+      }
+    </section>
+  </div>
+  <dialog id="goleadoresModal" class="p-6 border rounded-md">
+    <h1 class="text-2xl mb-4">Goleadores</h1>
+    {
+      players
+        .sort((a, b) => b.goal - a.goal)
+        .map((p, index) => (
+          <div>
+            <h1>
+              {index + 1}. {p.name}
+            </h1>
+            <p>Goles: {p.goal}</p>
+          </div>
+        ))
+    }
+    <form method="dialog">
+      <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded">
+        Cerrar
+      </button>
+    </form>
+  </dialog>
+
+  <script>
+    document
+      .querySelectorAll("button[data-dialog-target]")
+      .forEach((button) => {
+        button.addEventListener("click", () => {
+          const dialogId = button.getAttribute("data-dialog-target");
+          const dialog = document.getElementById(dialogId) as HTMLDialogElement;
+          if (dialog) {
+            dialog.showModal();
+          }
+        });
+      });
+  </script>
 </Layout>
