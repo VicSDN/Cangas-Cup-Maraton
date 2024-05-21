@@ -4,14 +4,12 @@ import { supabase } from "../../db/supabase";
 import Layout from "../../layouts/Layout.astro";
 let { id } = Astro.params;
 
-// Obtiene los detalles del equipo
 let { data: team, error: teamError } = await supabase
   .from("team")
   .select("*")
   .eq("id", id)
   .single();
 
-// Obtiene los jugadores del equipo
 let { data: players, error: playerError } = await supabase
   .from("player")
   .select("*")
@@ -30,7 +28,7 @@ const groupStandings = allTeams.sort((a, b) => b.points - a.points);
 <Layout description="Team Details" title="Cangas Cup Team Details">
   <section><ButtonBack /></section>
   <div
-    class="container mx-auto mt-20 pt-2 grid grid-cols-1 md:grid-cols-3 gap-4 md:p-8 px-8"
+    class="container mx-auto mt-20 pt-8 p-4 grid grid-cols-1 md:grid-cols-3 gap-4 md:p-10 px-8"
   >
     <!-- Team Info Section -->
     <div class="md:col-span-1 bg-white bg-opacity-20 p-6 rounded-lg shadow-md">
