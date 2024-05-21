@@ -23,9 +23,6 @@ let { data: team, error } = await supabase.from("team").select("*");
               <span class="italic text-sm text-gray-400 dark:text-gray-400">
                 GRUPO {team.groupId}
               </span>
-              <span class="text-sm text-gray-400 dark:text-gray-400">
-                Puntos logrados = {team.points}
-              </span>
               <div class="flex mt-4 md:mt-6">
                 <a
                   href={`/teams/${team.id}`}

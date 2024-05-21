@@ -2,6 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import { supabase } from "../../db/supabase";
 import Goal from "./icons/Goal.astro";
+import Assist from "./icons/Assist.astro";
+import Mvp from "./icons/Mvp.astro";
+import YellowCard from "./icons/YellowCard.astro";
+import RedCard from "./icons/RedCard.astro";
 
 let { data: players, error } = await supabase.from("player").select("*");
 
@@ -19,20 +23,17 @@ const playerStats = {
 ---
 
 <Layout description="Ranking Maratón" title="Ranking Maratón">
-  <div class="flex flex-wrap gap-4 p-0 m-6">
+  <div class="flex flex-wrap gap-4 m-20 mt-32">
     <section class="border p-4 rounded-md flex-1 min-w-[200px] text-center">
       <h1 class="text-2xl border-b-2">MAX GOLEADORES</h1>
       {
         playerStats.goleadores.map((p, index) => (
-          <a href={`/rankings/${p.id}`} class="block my-4 ">
-            <div
-              class="relative flex flex-col items-center justify-center text-white bg-blue-600 bg-opacity-40 shadow-md w-84 rounded-xl bg-clip-border"
-              style="max-width: 300px; margin: 0 auto;"
-            >
+          <a href={`/rankings/${p.id}`} class="block my-4">
+            <div class="relative flex flex-col items-center justify-center text-white bg-blue-600 bg-opacity-40 shadow-md w-full max-w-xs rounded-xl bg-clip-border">
               <nav class="flex flex-col gap-1 p-2 font-sans text-white">
                 <div
                   role="button"
-                  class="flex items-center justify-center w-full mt-4  leading-tight transition-all rounded-lg outline-none text-center hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+                  class="flex items-center justify-center w-full mt-4 leading-tight transition-all rounded-lg outline-none text-center hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
                 >
                   <>
                     <p class="text-2xl font-bold"> {index + 1}.</p>{" "}
@@ -44,11 +45,11 @@ const playerStats = {
                 </div>
                 <div
                   role="button"
-                  class="flex items-center justify-center gap-10 w-full p-3 leading-tight transition-all rounded-lg outline-none text-center hover:bg-gray-800 hover:bg-opacity-80 hover:text-white focus:bg-gray-800 focus:bg-opacity-80 focus:text-white active:bg-gray-800 active:bg-opacity-80 active:text-white"
+                  class="flex items-center justify-center gap-6 w-full p-2 leading-tight transition-all rounded-lg outline-none text-center hover:bg-gray-800 hover:bg-opacity-80 hover:text-white focus:bg-gray-800 focus:bg-opacity-80 focus:text-white active:bg-gray-800 active:bg-opacity-80 active:text-white"
                 >
-                  <p class=" text-3xl ">{p.goal}</p>
-                  <p class="text-3xl ">
-                    <Goal style={{ fontSize: "45px" }} />
+                  <p class="text-3xl">{p.goal}</p>
+                  <p class="text-3xl">
+                    <Goal />
                   </p>
                 </div>
               </nav>
@@ -56,6 +57,7 @@ const playerStats = {
           </a>
         ))
       }
+
       <button
         class="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
         data-dialog-target="goleadoresModal"
@@ -64,54 +66,174 @@ const playerStats = {
       </button>
     </section>
 
-    <section class="border p-4 rounded-md flex-1 min-w-[200px]">
-      <h1>ASISTENCIAS</h1>
+    <section class="border p-4 rounded-md flex-1 min-w-[200px] text-center">
+      <h1 class="text-2xl border-b-2">MAX ASISTENCIAS</h1>
       {
-        playerStats.asistencias.map((p) => (
-          <div>
-            <h2>{p.name}</h2>
-            <p>{p.assist}</p>
-          </div>
+        playerStats.asistencias.map((p, index) => (
+          <a href={`/rankings/${p.id}`} class="block my-4">
+            <div class="relative flex flex-col items-center justify-center text-white bg-blue-600 bg-opacity-40 shadow-md w-full max-w-xs rounded-xl bg-clip-border">
+              <nav class="flex flex-col gap-1 p-2 font-sans text-white">
+                <div
+                  role="button"
+                  class="flex items-center justify-center w-full mt-4 leading-tight transition-all rounded-lg outline-none text-center hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+                >
+                  <>
+                    <p class="text-2xl font-bold"> {index + 1}.</p>{" "}
+                    <p class="text-xl font-bold font-mono">
+                      {" "}
+                      {p.name} {p.secondName}
+                    </p>
+                  </>
+                </div>
+                <div
+                  role="button"
+                  class="flex items-center justify-center gap-6 w-full p-2 leading-tight transition-all rounded-lg outline-none text-center hover:bg-gray-800 hover:bg-opacity-80 hover:text-white focus:bg-gray-800 focus:bg-opacity-80 focus:text-white active:bg-gray-800 active:bg-opacity-80 active:text-white"
+                >
+                  <p class="text-3xl">{p.assist}</p>
+                  <p class="text-3xl">
+                    <Assist style="font-size: 45px;" />
+                  </p>
+                </div>
+              </nav>
+            </div>
+          </a>
         ))
       }
+
+      <button
+        class="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+        data-dialog-target="assistModal"
+      >
+        Ver Todo
+      </button>
     </section>
-    <section class="border p-4 rounded-md flex-1 min-w-[200px]">
-      <h1>MVP</h1>
+    <section class="border p-4 rounded-md flex-1 min-w-[200px] text-center">
+      <h1 class="text-2xl border-b-2">MVP</h1>
       {
-        playerStats.mvps.map((p) => (
-          <div>
-            <h2>{p.name}</h2>
-            <p>{p.mvp}</p>
-          </div>
+        playerStats.mvps.map((p, index) => (
+          <a href={`/rankings/${p.id}`} class="block my-4">
+            <div class="relative flex flex-col items-center justify-center text-white bg-blue-600 bg-opacity-40 shadow-md w-full max-w-xs rounded-xl bg-clip-border">
+              <nav class="flex flex-col gap-1 p-2 font-sans text-white">
+                <div
+                  role="button"
+                  class="flex items-center justify-center w-full mt-4 leading-tight transition-all rounded-lg outline-none text-center hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+                >
+                  <>
+                    <p class="text-2xl font-bold"> {index + 1}.</p>{" "}
+                    <p class="text-xl font-bold font-mono">
+                      {" "}
+                      {p.name} {p.secondName}
+                    </p>
+                  </>
+                </div>
+                <div
+                  role="button"
+                  class="flex items-center justify-center gap-6 w-full p-2 leading-tight transition-all rounded-lg outline-none text-center hover:bg-gray-800 hover:bg-opacity-80 hover:text-white focus:bg-gray-800 focus:bg-opacity-80 focus:text-white active:bg-gray-800 active:bg-opacity-80 active:text-white"
+                >
+                  <p class="text-3xl">{p.mvp}</p>
+                  <p class="text-3xl">
+                    <Mvp style="font-size: 45px;" />
+                  </p>
+                </div>
+              </nav>
+            </div>
+          </a>
         ))
       }
+
+      <button
+        class="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+        data-dialog-target="mvpModal"
+      >
+        Ver Todo
+      </button>
     </section>
-    <section class="border p-4 rounded-md flex-1 min-w-[200px]">
-      <h1>T.AMARILLAS</h1>
+    <section class="border p-4 rounded-md flex-1 min-w-[200px] text-center">
+      <h1 class="text-2xl border-b-2">Tarjetas Amarillas</h1>
       {
-        playerStats.amarillas.map((p) => (
-          <div>
-            <h2>{p.name}</h2>
-            <p>{p.yellowCard}</p>
-          </div>
+        playerStats.amarillas.map((p, index) => (
+          <a href={`/rankings/${p.id}`} class="block my-4">
+            <div class="relative flex flex-col items-center justify-center text-white bg-blue-600 bg-opacity-40 shadow-md w-full max-w-xs rounded-xl bg-clip-border">
+              <nav class="flex flex-col gap-1 p-2 font-sans text-white">
+                <div
+                  role="button"
+                  class="flex items-center justify-center w-full mt-4 leading-tight transition-all rounded-lg outline-none text-center hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+                >
+                  <>
+                    <p class="text-2xl font-bold"> {index + 1}.</p>{" "}
+                    <p class="text-xl font-bold font-mono">
+                      {" "}
+                      {p.name} {p.secondName}
+                    </p>
+                  </>
+                </div>
+                <div
+                  role="button"
+                  class="flex items-center justify-center gap-6 w-full p-2 leading-tight transition-all rounded-lg outline-none text-center hover:bg-gray-800 hover:bg-opacity-80 hover:text-white focus:bg-gray-800 focus:bg-opacity-80 focus:text-white active:bg-gray-800 active:bg-opacity-80 active:text-white"
+                >
+                  <p class="text-3xl">{p.yellowCard}</p>
+                  <p class="text-3xl">
+                    <YellowCard style="font-size: 45px;" />
+                  </p>
+                </div>
+              </nav>
+            </div>
+          </a>
         ))
       }
+
+      <button
+        class="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+        data-dialog-target="yellowCardModal"
+      >
+        Ver Todo
+      </button>
     </section>
-    <section class="border p-4 rounded-md flex-1 min-w-[200px]">
-      <h1>T.ROJAS</h1>
+    <section class="border p-4 rounded-md flex-1 min-w-[200px] text-center">
+      <h1 class="text-2xl border-b-2">Tarjetas Rojas</h1>
       {
-        playerStats.rojas.map((p) => (
-          <div>
-            <h2>{p.name}</h2>
-            <p>{p.redCard}</p>
-          </div>
+        playerStats.rojas.map((p, index) => (
+          <a href={`/rankings/${p.id}`} class="block my-4">
+            <div class="relative flex flex-col items-center justify-center text-white bg-blue-600 bg-opacity-40 shadow-md w-full max-w-xs rounded-xl bg-clip-border">
+              <nav class="flex flex-col gap-1 p-2 font-sans text-white">
+                <div
+                  role="button"
+                  class="flex items-center justify-center w-full mt-4 leading-tight transition-all rounded-lg outline-none text-center hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900"
+                >
+                  <>
+                    <p class="text-2xl font-bold"> {index + 1}.</p>{" "}
+                    <p class="text-xl font-bold font-mono">
+                      {" "}
+                      {p.name} {p.secondName}
+                    </p>
+                  </>
+                </div>
+                <div
+                  role="button"
+                  class="flex items-center justify-center gap-6 w-full p-2 leading-tight transition-all rounded-lg outline-none text-center hover:bg-gray-800 hover:bg-opacity-80 hover:text-white focus:bg-gray-800 focus:bg-opacity-80 focus:text-white active:bg-gray-800 active:bg-opacity-80 active:text-white"
+                >
+                  <p class="text-3xl">{p.redCard}</p>
+                  <p class="text-3xl">
+                    <RedCard style="font-size: 45px;" />
+                  </p>
+                </div>
+              </nav>
+            </div>
+          </a>
         ))
       }
+
+      <button
+        class="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+        data-dialog-target="redCardModal"
+      >
+        Ver Todo
+      </button>
     </section>
   </div>
   <dialog
     id="goleadoresModal"
-    class="p-6 border rounded-md text-center w-full h-full fixed inset-0 overflow-auto bg-gray-900 bg-opacity-90 z-50 "
+    class="p-6 border rounded-md text-center w-full h-full fixed inset-0 overflow-auto bg-gray-900 bg-opacity-90 z-50"
   >
     <h1 class="text-2xl mb-4">Goleadores</h1>
     <form method="dialog">
@@ -123,11 +245,103 @@ const playerStats = {
       players
         .sort((a, b) => b.goal - a.goal)
         .map((p, index) => (
-          <div class="flex flex-row text-center">
-            <h1 class="2xl">
+          <div class="flex flex-col items-center justify-center mb-2">
+            <h1 class="text-2xl font-bold">
               {index + 1}. {p.name}
             </h1>
-            <p>Goles: {p.goal}</p>
+            <p class="text-xl">Goles: {p.goal}</p>
+          </div>
+        ))
+    }
+  </dialog>
+  <dialog
+    id="assistModal"
+    class="p-6 border rounded-md text-center w-full h-full fixed inset-0 overflow-auto bg-gray-900 bg-opacity-90 z-50"
+  >
+    <h1 class="text-2xl mb-4">Asistencias</h1>
+    <form method="dialog">
+      <button class="mt-4 mb-4 bg-red-500 text-white px-4 py-2 rounded">
+        Cerrar
+      </button>
+    </form>
+    {
+      players
+        .sort((a, b) => b.assist - a.assist)
+        .map((p, index) => (
+          <div class="flex flex-col items-center justify-center mb-2">
+            <h1 class="text-2xl font-bold">
+              {index + 1}. {p.name}
+            </h1>
+            <p class="text-xl">Asistencias: {p.assist}</p>
+          </div>
+        ))
+    }
+  </dialog>
+  <dialog
+    id="mvpModal"
+    class="p-6 border rounded-md text-center w-full h-full fixed inset-0 overflow-auto bg-gray-900 bg-opacity-90 z-50"
+  >
+    <h1 class="text-2xl mb-4">MVP</h1>
+    <form method="dialog">
+      <button class="mt-4 mb-4 bg-red-500 text-white px-4 py-2 rounded">
+        Cerrar
+      </button>
+    </form>
+    {
+      players
+        .sort((a, b) => b.mvp - a.mvp)
+        .map((p, index) => (
+          <div class="flex flex-col items-center justify-center mb-2">
+            <h1 class="text-2xl font-bold">
+              {index + 1}. {p.name}
+            </h1>
+            <p class="text-xl">MVP: {p.mvp}</p>
+          </div>
+        ))
+    }
+  </dialog>
+  <dialog
+    id="yellowCardModal"
+    class="p-6 border rounded-md text-center w-full h-full fixed inset-0 overflow-auto bg-gray-900 bg-opacity-90 z-50"
+  >
+    <h1 class="text-2xl mb-4">Tarjetas Amarillas</h1>
+    <form method="dialog">
+      <button class="mt-4 mb-4 bg-red-500 text-white px-4 py-2 rounded">
+        Cerrar
+      </button>
+    </form>
+    {
+      players
+        .sort((a, b) => b.yellowCard - a.yellowCard)
+        .map((p, index) => (
+          <div class="flex flex-col items-center justify-center mb-2">
+            <h1 class="text-2xl font-bold">
+              {index + 1}. {p.name}
+            </h1>
+            <p class="text-xl">Tarjetas Amarillas: {p.yellowCard}</p>
+          </div>
+        ))
+    }
+  </dialog>
+  <dialog
+    id="redCardModal"
+    class="p-6 border rounded-md text-center w-full h-full fixed inset-0 overflow-auto bg-gray-900 bg-opacity-90 z-50"
+  >
+    <h1 class="text-2xl mb-4">Tarjetas Rojas</h1>
+    <form method="dialog">
+      <button class="mt-4 mb-4 bg-red-500 text-white px-4 py-2 rounded">
+        Cerrar
+      </button>
+    </form>
+    {
+      players
+        .sort((a, b) => b.redCard - a.redCard)
+        .map((p, index) => (
+          <div class="flex flex-col items-center justify-center mb-2">
+            <h1 class="text-2xl font-bold">
+              {index + 1}. {p.name}
+            </h1>
+            <p class="text-xl">Tarjetas Rojas: {p.redCard}</p>
           </div>
         ))
     }

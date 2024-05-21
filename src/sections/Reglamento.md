@@ -18,17 +18,15 @@ Los equipos clasificados en primer y segundo lugar de cada grupo pasarán de ron
 Si una vez terminada la fase de grupos existe un empate entre dos o más equipos, seguiremos los siguientes criterios:
 
 1. Enfrentamiento directo entre los equipos.
-2. Diferencia de goles a favor y en contra en la suma de los encuentros jugados entre ellos.
-3. Goles a favor.
-4. Fair Play, siendo el ganador aquel que tiene la menor acumulación de puntos de indisciplina en base a las siguientes puntuaciones:
-
+1. Diferencia de goles a favor y en contra en la suma de los encuentros jugados entre ellos.
+1. Goles a favor.
+1. Fair Play, siendo el ganador aquel que tiene la menor acumulación de puntos de indisciplina en base a las siguientes puntuaciones:
 - Tarjeta amarilla: 1 Punto.
 - Tarjeta roja por doble amarilla: 3 Puntos.
 - Tarjeta roja directa: 4 Puntos.
 - Tarjeta roja directa teniendo una amarilla anterior: 5 Puntos.
-
 5. Faltas cometidas.
-6. Sorteo.
+5. Sorteo.
 
 En caso de empate en las rondas eliminatorias de la segunda fase y en la final, el partido se decidirá con lanzamientos desde el punto de penalti (según reglas FIFA).
 
@@ -42,7 +40,7 @@ La Organización del torneo se reserva el derecho a cambiar los grupos, el calen
 
 **ARTÍCULO 4 – DURACIÓN DE LOS PARTIDOS**
 
-- El tiempo de duración de los partidos será de 40 minutos divididos en 2 tiempos de 20 minutos. El juego se desarrollará a reloj corrido durante todo el encuentro, a excepción del último minuto de cada parte, el cual se disputará a reloj parado.
+- El tiempo de duración de los partidos será de 40 minutos divididos en 2 tiempos de 20 minutos. El juego se desarrollará a reloj corrido durante todo el encuentro. A partir de cuartos de final se jugará a reloj parado el último minuto de la segunda parte.
 - El tiempo de descanso será de 5 minutos.
 - A partir de semifinales cada equipo dispondrá de 1 tiempo muerto en cada una de las partes de un minuto de duración.
 
@@ -89,10 +87,10 @@ El árbitro podrá sancionar a los jugadores o miembros del equipo según la gra
 - **Tarjeta amarilla:** Cuando un jugador o miembro del equipo reciba 2 tarjetas amarillas quedará expulsado del encuentro, pero podrá jugar el siguiente partido.
 - **Expulsión 2 minutos:** Cuando un jugador sea expulsado podrá ser sustituido por otro una vez transcurridos 2 minutos de juego efectivos después de la expulsión, y una vez que sea autorizado por el árbitro. Si el equipo sancionado encaja un gol antes de que se cumplieran los 2 minutos de la sanción, ésta finalizaría en ese instante (nunca finalizaría la sanción si es el equipo en inferioridad el que anota el gol) . Si ambos equipos cuentan con una expulsión y uno de ellos marca gol, el número de jugadores de ambos combinados no sufrirá modificaciones hasta que se acaben los 2 minutos de sanción.
 - **Tarjeta roja directa:** El jugador quedará expulsado del encuentro y no podrá jugar el siguiente partido. Además, árbitros y Organización decidirán la sanción en función de la gravedad de la acción cometida.
+- **Acumulación de tarjetas:** Si un jugador recibe tres tarjetas amarillas en tres partidos distintos será sancionado con la imposibilidad de jugar el siguiente partido (nunca se podría perder la final del torneo por dicha acumulación de tarjetas, sólo en caso de tarjeta roja directa).
 
-**ARTÍCULO 11 – ALINEACIONES INDEBIDAS**
-
- Se considera alineación indebida:
+**ARTÍCULO 11 – ALINEACIONES INDEBIDAS** 
+  Se considera alineación indebida:
 
 - Que un jugador no presente el DNI antes del comienzo del partido.
 - Falsear los datos de un jugador.
@@ -102,13 +100,17 @@ Cualquier equipo que incurra en alineación indebida será sancionado con la pé
 
 **ARTÍCULO 12 – COMPORTAMIENTO**
 
-Cualquier equipo que provoque la suspensión de un partido, bien como consecuencia de indisciplina colectiva, abandono del terreno de juego o agresión a contrarios, árbitro, asistentes, organización, etc., bien por la invasión del terreno de juego de seguidores del mismo equipo, o bien por cualquier otra causa que induzca al árbitro a decretar la suspensión del encuentro, será sancionado con la pérdida del partido por un resultado de 5-0, salvo que en el momento de la suspensión el resultado fuera desfavorable por un mayor número de goles en su contra.
+Cualquier equipo que provoque la suspensión de un partido, bien como consecuencia de indisciplina colectiva,abandono del terreno de juego o agresión a contrarios, árbitro, asistentes, organización, etc., bien por la invasión del terreno de juego de seguidores del mismo equipo, o bien por cualquier otra causa que induzca al árbitro a decretar la suspensión delencuentro, será sancionado con la pérdida del partido por un resultado de 5-0, salvo que en el momento de la suspensión el resultado fuera desfavorable por un mayor número de goles en su contra.
 
-Cada equipo participante será responsable del comportamiento de sus jugadores. Una conducta inadecuada por parte de uno o varios jugadores puede provocar la expulsión del equipo del torneo.
+Cada equipo participante será responsabledelcomportamiento desus jugadores. Una conducta inadecuada por parte de uno o varios jugadores puede provocar la expulsión del equipo del torneo.
 
-**ARTÍCULO 13 – TROFEOS Y PREMIOS**
+**ARTÍCULO 13 – EQUIPO LOCAL**
 
-Una vez finalizado el torneo se llevará a cabo la entrega de premios y trofeos.
+Se considerará equipo local todo aquel que se encuentre formado como mínimo en un 75% por jugadores locales. Además, si se cuenta con algún patrocinador que dé nombre al equipo, éste deberá ser también de la localidad.
+
+**ARTÍCULO 14 – TROFEOS Y PREMIOS**
+
+Una vez finalizada la final del torneo se llevará a cabo la entrega de premios y trofeos.
 
 **Premios Colectivos**
 
@@ -117,9 +119,7 @@ Una vez finalizado el torneo se llevará a cabo la entrega de premios y trofeos.
 - 3º y 4º – 200€ + Trofeo. \*
 - Mejor equipo local – 100€ + Inscripción gratuita para el siguiente torneo.\*\*
 
-  \*(No se disputará partido por el tercer y cuarto puesto, por lo que las posiciones se decidirán en base al mismo formato explicado en el artículo 2 de este reglamento).
-
-  \*\*(En el supuesto de que los últimos equipos locales que sigan compitiendo en el torneo se queden eliminados en la misma ronda, se decidirá el mejor de ellos en base al mismo formato explicado en el artículo 2 de este reglamento).
+  \*(No se disputará partido por el tercer y cuarto puesto, por lo que las posiciones se decidirán en base al mismo formato explicado en el artículo 2 de este reglamento). \*\*(Enelsupuesto dequelosúltimosequiposlocalesque sigancompitiendo eneltorneo se queden eliminados en la misma ronda, se decidirá el mejor de ellos en base al mismo formato explicado en el artículo 2 de este reglamento).
 
 **Premios Individuales**
 
@@ -127,8 +127,7 @@ Una vez finalizado el torneo se llevará a cabo la entrega de premios y trofeos.
 - Mejor portero del torneo.
 - Máximo goleador del torneo.
 
-
-**ARTÍCULO 14 – SEGURO**
+**ARTÍCULO 15 – SEGURO**
 
 El torneo dispone de seguro de Responsabilidad Civil.
 
