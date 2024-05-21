@@ -1,6 +1,4 @@
-﻿**REGLAMENTO I CANGAS CUP MANIN FÚTBOL SALA 2024**
-
-**ARTÍCULO 1 – REGLAS**
+﻿**ARTÍCULO 1 – REGLAS**
 
 El torneo se disputará de acuerdo con las reglas de la FIFA y las adicionales de la RFEF, a excepción de los detalles que se explican en este reglamento.
 
@@ -18,15 +16,15 @@ Los equipos clasificados en primer y segundo lugar de cada grupo pasarán de ron
 Si una vez terminada la fase de grupos existe un empate entre dos o más equipos, seguiremos los siguientes criterios:
 
 1. Enfrentamiento directo entre los equipos.
-1. Diferencia de goles a favor y en contra en la suma de los encuentros jugados entre ellos.
-1. Goles a favor.
-1. Fair Play, siendo el ganador aquel que tiene la menor acumulación de puntos de indisciplina en base a las siguientes puntuaciones:
+2. Diferencia de goles a favor y en contra en la suma de los encuentros jugados entre ellos.
+3. Goles a favor.
+4. Fair Play, siendo el ganador aquel que tiene la menor acumulación de puntos de indisciplina en base a las siguientes puntuaciones:
 - Tarjeta amarilla: 1 Punto.
 - Tarjeta roja por doble amarilla: 3 Puntos.
 - Tarjeta roja directa: 4 Puntos.
 - Tarjeta roja directa teniendo una amarilla anterior: 5 Puntos.
-5. Faltas cometidas.
-5. Sorteo.
+1. Faltas cometidas.
+2. Sorteo.
 
 En caso de empate en las rondas eliminatorias de la segunda fase y en la final, el partido se decidirá con lanzamientos desde el punto de penalti (según reglas FIFA).
 
