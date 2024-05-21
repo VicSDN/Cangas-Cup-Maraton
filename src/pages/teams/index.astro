@@ -9,8 +9,8 @@ let { data: team, error } = await supabase.from("team").select("*");
   description="Reglamento Cangas Cup 2024 "
   title="Reglamento - Cangas Cup Futsal 2024"
 >
-<section><ButtonBack /></section>
-  <div class="flex justify-center mt-20 pt-2">
+  <section><ButtonBack /></section>
+  <div class="flex justify-center mt-20 p-8">
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 m-10">
       {
         team.map((team) => (
