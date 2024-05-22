@@ -23,6 +23,47 @@ let { data: allTeams, error: allTeamsError } = await supabase
 
 // Calcula la clasificación del grupo
 const groupStandings = allTeams.sort((a, b) => b.points - a.points);
+
+// Consulta los partidos del equipo
+let { data: matches, error: matchesError } = await supabase
+  .from("match")
+  .select("*")
+  .or(`id_team1.eq.${id},id_team2.eq.${id}`);
+
+function findTeam(teamId) {
+  if (!allTeams) return null;
+  const teamAux = allTeams.find((t) => t.id === teamId);
+  return teamAux || { name: "Equipo desconocido" }; // Maneja el caso en el que el equipo no se encuentre
+}
+
+function formatDateTime(dateString) {
+  const date = new Date(dateString);
+  const day = date.getDate();
+  const monthIndex = date.getMonth();
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+
+  const monthNames = [
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre",
+  ];
+
+  const monthName = monthNames[monthIndex];
+  const formattedDate = `${day} de ${monthName}`;
+  const formattedTime = `${hours}:${minutes}`;
+
+  return { formattedDate, formattedTime };
+}
 ---
 
 <Layout description="Team Details" title="Cangas Cup Team Details">
@@ -37,7 +78,7 @@ const groupStandings = allTeams.sort((a, b) => b.points - a.points);
           <div class="text-center">
             <h1 class="text-2xl font-bold mb-4 text-white">{team.name}</h1>
             <p class="text-gray-300">
-              <strong>Ubicación</strong> {team.location}
+              <strong>Ubicación:</strong> {team.location}
             </p>
             <p class="text-gray-300">
               <strong>Grupo:</strong> {team.groupId}
@@ -45,6 +86,41 @@ const groupStandings = allTeams.sort((a, b) => b.points - a.points);
             <p class="text-gray-300">
               <strong>Puntos:</strong> {team.points}
             </p>
+            <div class="mt-4">
+              <h2 class="text-xl font-bold mb-2 text-white">Partidos:</h2>
+              <div class="flex flex-col items-center">
+                {matches &&
+                  matches.map((match) => {
+                    const team1 = findTeam(match.id_team1);
+                    const team2 = findTeam(match.id_team2);
+                    return (
+                      <div class="w-full max-w-xs bg-gray-700 bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-50 text-white dark:text-white rounded-lg shadow-md p-4 my-2 transition transform hover:scale-105">
+                        <div class="flex flex-col items-center">
+                          <div>
+                            <span class="font-bold">{team1.name}</span> vs.{" "}
+                            <span class="font-bold">{team2.name}</span>
+                          </div>
+                          <div>
+                            {match.finished ? (
+                              <>
+                                <span>{match.goals_team1}</span>
+                                <span class="mx-2">-</span>
+                                <span>{match.goals_team2}</span>
+                              </>
+                            ) : (
+                              <>
+                                <b>{formatDateTime(match.day).formattedTime}</b>
+                                <br />
+                                {formatDateTime(match.day).formattedDate}
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
           </div>
         )
       }
