@@ -44,6 +44,7 @@ function formatDateTime(dateString) {
   w-full max-w-[1400px]
   grid lg:grid-rows-10 auto-rows-[auto] gap-4
   mx-auto items-center p-6 md:p-12 lg:p-20
+  text-lg // Definimos el tamaño de texto principal
 `}
 >
   {
@@ -60,7 +61,7 @@ function formatDateTime(dateString) {
         group
       `}
         >
-          <div class="relative z-20 grid grid-cols-3 items-center justify-between p-4 text-lg md:p-6">
+          <div class="relative z-20 grid grid-cols-3 items-center justify-between p-4">
             <a
               href={`/teams/${match.id_team2}`}
               class="flex flex-col bg-gray-700 bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-50 text-white dark:text-white rounded-lg shadow-md p-4 transition transform hover:scale-105"
@@ -69,9 +70,9 @@ function formatDateTime(dateString) {
                 {findTeam(match.id_team1).name}
               </span>
             </a>
-            <div class="col-span-1 text-center md:text-lg lg:text-xl text-sm">
+            <div class="col-span-1 text-center">
               {" "}
-              {/* Modificado */}
+              {/* Mantenemos el tamaño del texto principal */}
               <span>{match.goals_team1}</span>
               <span class="mx-2">-</span>
               <span>{match.goals_team2}</span>
@@ -98,7 +99,7 @@ function formatDateTime(dateString) {
         group
       `}
         >
-          <div class="relative z-20 grid grid-cols-3 items-center justify-between p-4 text-lg md:p-6">
+          <div class="relative z-20 grid grid-cols-3 items-center justify-between p-4">
             <a
               href={`/teams/${match.id_team2}`}
               class="flex flex-col bg-gray-700 bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-50 text-white dark:text-white rounded-lg shadow-md p-4 transition transform hover:scale-105"
@@ -107,9 +108,9 @@ function formatDateTime(dateString) {
                 {findTeam(match.id_team1).name}
               </span>
             </a>
-            <div class="col-span-1 text-center md:text-lg lg:text-xl text-sm">
+            <div class="col-span-1 text-center">
               {" "}
-              {/* Modificado */}
+              {/* Mantenemos el tamaño del texto principal */}
               <>
                 <b>{formatDateTime(match.day).formattedTime}</b>
                 <br />
