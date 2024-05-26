@@ -68,7 +68,7 @@ const pages = [
       </aside>
       <div class="flex min-h-2 w-full items-center">
         <hr
-          class="h-[2px] w-full border-t-0"
+          class="fixed-hr"
           style="background:linear-gradient(to right, transparent 0%, white 50%, transparent 100%)"
         />
       </div>
@@ -81,10 +81,7 @@ const pages = [
             loading="lazy"
           />
         </a>
-        <hr
-          class="absolute left-0 bottom-0 h-[2px] w-full border-t-0"
-          style="background:linear-gradient(to right, transparent 0%, white 50%, transparent 100%); z-index: 10;"
-        />
+        <hr class="fixed-hr" />
         {
           pages.map(({ disabled, name, href, active, soonDate }, key) => (
             <>
@@ -100,10 +97,7 @@ const pages = [
                 <span class="z-10 uppercase text-primary">{name}</span>
                 {disabled && <span class="text-accent">{soonDate}</span>}
               </a>
-              <hr
-                class="h-[2px] w-full border-t-0"
-                style="background:linear-gradient(to right, transparent 0%, white 50%, transparent 100%)"
-              />
+              <hr class="fixed-hr" />
             </>
           ))
         }
@@ -228,6 +222,23 @@ const pages = [
     #menuMobileContent {
       transition: opacity 0s;
     }
+  }
+
+  .fixed-hr {
+    height: 2px;
+    border: 0;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      white 50%,
+      transparent 100%
+    );
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
   }
 </style>
 
