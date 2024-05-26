@@ -45,14 +45,14 @@ function formatDateTime(dateString) {
   {
     match.map((match) => (
       <article
-        class={`w-full relative rounded-xl backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden bg-white bg-opacity-${match.finished ? "40" : "20"} group`}
+        class={`w-full bg-white relative rounded-xl backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden bg-opacity-${match.finished ? "40" : "20"} group`}
       >
         <div class="relative z-20 grid grid-cols-3 items-center justify-between p-4 text-lg md:p-6">
           <a
             href={`/teams/${match.id_team2}`}
             class="flex flex-col bg-gray-700 bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-50 text-white dark:text-white rounded-lg shadow-md p-4 transition transform hover:scale-105"
           >
-            <span class="col-span-1 text-right pr-4 text-sm md:text-lg lg:text-lg xl:text-lg">
+            <span class="col-span-1 text-right pr-4 text-lg md:text-lg lg:text-lg xl:text-lg">
               {findTeam(match.id_team1).name}
             </span>
           </a>
@@ -66,10 +66,10 @@ function formatDateTime(dateString) {
               </>
             ) : (
               <>
-                <b class="block text-sm md:text-base lg:text-base xl:text-base">
+                <b class="block text-sm md:text-lg lg:text-lg xl:text-lg">
                   {formatDateTime(match.day).formattedTime}
                 </b>
-                <span class="block text-xs md:text-sm lg:text-sm xl:text-sm">
+                <span class="block text-base md:text-lg lg:text-lg xl:text-lg">
                   {formatDateTime(match.day).formattedDate}
                 </span>
               </>
@@ -80,7 +80,7 @@ function formatDateTime(dateString) {
             href={`/teams/${match.id_team2}`}
             class="flex flex-col bg-gray-700 bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-50 text-white dark:text-white rounded-lg shadow-md p-4 transition transform hover:scale-105"
           >
-            <span class="col-span-1 text-left pl-4 text-sm md:text-lg lg:text-lg xl:text-lg">
+            <span class="col-span-1 text-left pl-4 text-lg md:text-lg lg:text-lg xl:text-lg">
               {findTeam(match.id_team2).name}
             </span>
           </a>
