@@ -9,6 +9,7 @@ export const SPONSORS: Array<Sponsors> = [
       width: 220,
       height: 140,
     },
+    type: "Top",
   },
   {
     id: "baccara",
@@ -18,6 +19,7 @@ export const SPONSORS: Array<Sponsors> = [
       width: 300,
       height: 300,
     },
+    type: "premium",
   },
   {
     id: "asturtoner",
@@ -27,6 +29,7 @@ export const SPONSORS: Array<Sponsors> = [
       width: 300,
       height: 300,
     },
+    type: "premium",
   },
   {
     id: "puntoycoma",
@@ -36,24 +39,27 @@ export const SPONSORS: Array<Sponsors> = [
       width: 250,
       height: 250,
     },
+    type: "premium",
   },
   {
     id: "laabadia",
     name: "La Abadía",
-    url: "https://spotify.com/",
+    url: "https://www.instagram.com/laabadiadecangas/?hl=es",
     image: {
       width: 250,
       height: 250,
     },
+    type: "premium",
   },
   {
     id: "refierta",
     name: "Refierta",
-    url: "https://cerave.es/",
+    url: "https://www.facebook.com/LaRefierta/",
     image: {
       width: 300,
-      height: 120,
+      height: 300,
     },
+    type: "premium",
   },
   {
     id: "lozano",
@@ -63,6 +69,7 @@ export const SPONSORS: Array<Sponsors> = [
       width: 250,
       height: 110,
     },
+    type: "premium",
   },
   {
     id: "cajarural",
@@ -72,6 +79,7 @@ export const SPONSORS: Array<Sponsors> = [
       width: 300,
       height: 250,
     },
+    type: "Top",
   },
   {
     id: "javita",
@@ -81,6 +89,7 @@ export const SPONSORS: Array<Sponsors> = [
       width: 250,
       height: 150,
     },
+    type: "premium",
   },
   {
     id: "manin",
@@ -90,23 +99,25 @@ export const SPONSORS: Array<Sponsors> = [
       width: 300,
       height: 250,
     },
+    type: "Top",
   },
   {
-    id: "nuevo1",
-    name: "Nuevo Patrocinador 1",
-    url: "url_del_nuevo_patrocinador_1",
+    id: "goblet",
+    name: "Goblet",
+    url: "https://www.instagram.com/goblet_official/?hl=es",
     image: {
-      width: 200, // Ajustar el ancho según corresponda
-      height: 200, // Ajustar la altura según corresponda
+      width: 200,
+      height: 180,
     },
+    type: "premium",
   },
   {
     id: "nuevo2",
     name: "Nuevo Patrocinador 2",
     url: "url_del_nuevo_patrocinador_2",
     image: {
-      width: 200, // Ajustar el ancho según corresponda
-      height: 200, // Ajustar la altura según corresponda
+      width: 200,
+      height: 200,
     },
   },
   {

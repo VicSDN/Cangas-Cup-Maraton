@@ -8,33 +8,8 @@ import { SPONSORS } from "../consts/sponsors";
   <p class="text-xl font-semibold text-center mb-4">
     El maratón no seria posible sin ellos.
   </p>
-  <div class="mt-12 grid select-none grid-cols-3 gap-2 md:gap-8">
-    {
-      SPONSORS.filter(({ id }) => id !== "manin").map(
-        ({ id, name, url, image }) => (
-          <a
-            class="company-link group relative flex h-24 items-center justify-center overflow-hidden md:h-32"
-            title={`Visita la página del patrocinador ${name}`}
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Link con el logo de ${name} que lleva a ${url}`}
-          >
-            <SponsorLogo
-              logo={id}
-              width={image.width}
-              height={image.height}
-              class:list={[
-                "company-logo px-5 text-white transition group-hover:scale-110 group-focus:scale-110 md:px-4",
-              ]}
-            />
-          </a>
-        )
-      )
-    }
-  </div>
   <div
-    class="mt-20 flex flex-col items-center justify-center gap-4 xs:flex-row"
+    class="mt-20 flex flex-row items-center justify-center gap-4 xs:flex-row"
   >
     <a
       class="transition hover:scale-110 focus:scale-110 motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:focus:scale-100"
@@ -52,6 +27,63 @@ import { SPONSORS } from "../consts/sponsors";
         ]}
       />
     </a>
+    <a
+      class="transition hover:scale-110 focus:scale-110 motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:focus:scale-100"
+      href="https://www.cajaruraldeasturias.com/es"
+      title="Ir a la web de la Caja Rural de Asturias"
+      target="_blank"
+      aria-label="Link que redirige a la pagina de https://www.cajaruraldeasturias.com/es"
+    >
+      <SponsorLogo
+        logo="Ayuntamiento"
+        width={300}
+        height={250}
+        class:list={[
+          "inline-block select-none text-white transition hover:text-accent focus:text-accent",
+        ]}
+      />
+    </a>
+    <a
+      class="transition hover:scale-110 focus:scale-110 motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:focus:scale-100"
+      href=" https://www.ayto-cnarcea.es/"
+      title="Ir al Instagram de Panaderia Artesana Manin"
+      target="_blank"
+      aria-label="Link con el logo de Panaderia Manin que lleva ahttps://www.cajaruraldeasturias.com/es"
+    >
+      <SponsorLogo
+        logo="cajarural"
+        width={300}
+        height={250}
+        class:list={[
+          "inline-block select-none text-white transition hover:text-accent focus:text-accent",
+        ]}
+      />
+    </a>
+  </div>
+  <div class="mt-12 grid select-none grid-cols-3 gap-2 md:gap-8">
+    {
+      SPONSORS.filter(
+        ({ id, type }) => type === "premium" && id !== "manin"
+      ).map(({ id, name, url, image }) => (
+        <a
+          class="company-link group relative flex h-24 items-center justify-center overflow-hidden md:h-32 premium-sponsor"
+          title={`Visita la página del patrocinador ${name}`}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Link con el logo de ${name} que lleva a ${url}`}
+        >
+          <SponsorLogo
+            logo={id}
+            width={image.width}
+            height={image.height}
+            class:list={[
+              "company-logo px-5 text-white transition group-hover:scale-110 group-focus:scale-110 md:px-4",
+            ]}
+          />
+        </a>
+      ))
+    }
   </div>
 </section>
 <style>

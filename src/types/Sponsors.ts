@@ -9,7 +9,7 @@ type SponsorId =
   | "lozano"
   | "javita"
   | "manin"
-  | "nuevo1" // Nuevo patrocinador 1
+  | "goblet" // Nuevo patrocinador 1
   | "nuevo2" // Nuevo patrocinador 2
   | "nuevo3" // Nuevo patrocinador 3
   | "nuevo4" // Nuevo patrocinador 4
@@ -27,7 +27,7 @@ type SponsorName =
   | "Transportes Lozano"
   | "Javita"
   | "Manin"
-  | "Nuevo Patrocinador 1" // Nombre del nuevo patrocinador 1
+  | "Goblet" 
   | "Nuevo Patrocinador 2" // Nombre del nuevo patrocinador 2
   | "Nuevo Patrocinador 3" // Nombre del nuevo patrocinador 3
   | "Nuevo Patrocinador 4" // Nombre del nuevo patrocinador 4
@@ -42,5 +42,6 @@ export interface Sponsors {
     width: number;
     height: number;
   };
+  type:string;
 }
 
