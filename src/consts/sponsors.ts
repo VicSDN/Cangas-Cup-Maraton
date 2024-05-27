@@ -231,4 +231,74 @@ export const SPONSORS: Array<Sponsors> = [
     },
     type: "standard",
   },
+  {
+    id: "cachican",
+    name: "Cachican",
+    url: "https://cachican.es/",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "standard",
+  },
+  {
+    id: "lablugo",
+    name: "La Blugo",
+    url: "https://pidelablugo.com/",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "standard",
+  },
+  {
+    id: "bosque",
+    name: "Bosque",
+    url: "https://www.facebook.com/elbosqueoviedo/?locale=es_ES",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "standard",
+  },
+  {
+    id: "sidrerianarcea",
+    name: "Sidreria Narcea",
+    url: "https://www.instagram.com/sidrerianarcea/?hl=es",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "standard",
+  },
+  {
+    id: "varesport",
+    name: "Varesport",
+    url: "https://www.facebook.com/varesport/?locale=es_ES",
+    image: {
+      width: 200,
+      height: 200,
+    },
+    type: "standard",
+  },
+  {
+    id: "asesoriaCGL",
+    name: "AsesoriaCGL",
+    url: "https://www.instagram.com/cgl_consultores/?hl=es",
+    image: {
+      width: 200,
+      height: 200,
+    },
+    type: "standard",
+  },
+  {
+    id: "deportescarro",
+    name: "Deportescarro",
+    url: "https://www.deportescarro.com/ps/es/",
+    image: {
+      width: 200,
+      height: 200,
+    },
+    type: "standard",
+  },
 ] as const;

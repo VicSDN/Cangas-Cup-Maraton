@@ -21,7 +21,14 @@ type SponsorId =
   | "cafemadrid"
   | "streetfood"
   | "fornomanolo"
-  | "barlacasera"; 
+  | "barlacasera"
+  | "cachican"
+  | "lablugo"
+  | "bosque"
+  | "sidrerianarcea"
+  | "varesport"
+  | "deportescarro"
+  | "asesoriaCGL"; 
 
 type SponsorName =
   | "Ayuntamiento Cangas del Narcea"
@@ -46,7 +53,14 @@ type SponsorName =
   | "Cafe Madrid"
   | "Street Food"
   | "Forno Manolo"
-  | "Bar La Casera"; 
+  | "Bar La Casera"
+  | "Cachican"
+  | "La Blugo"
+  | "Bosque"
+  | "Sidreria Narcea"
+  | "Varesport"
+  | "AsesoriaCGL"
+  | "Deportescarro"; 
 
 export interface Sponsors {
   id: SponsorId;
