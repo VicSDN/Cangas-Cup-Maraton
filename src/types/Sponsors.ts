@@ -9,12 +9,19 @@ type SponsorId =
   | "lozano"
   | "javita"
   | "manin"
-  | "goblet" // Nuevo patrocinador 1
-  | "nuevo2" // Nuevo patrocinador 2
-  | "nuevo3" // Nuevo patrocinador 3
-  | "nuevo4" // Nuevo patrocinador 4
-  | "nuevo5" // Nuevo patrocinador 5
-  | "nuevo6"; // Nuevo patrocinador 6
+  | "goblet"
+  | "obradorflory"
+  | "lacasilla"
+  | "energy"
+  | "planb"
+  | "vacio"
+  | "carpaselneno"
+  | "vacio2"
+  | "deportesacebo"
+  | "cafemadrid"
+  | "streetfood"
+  | "fornomanolo"
+  | "barlacasera"; 
 
 type SponsorName =
   | "Ayuntamiento Cangas del Narcea"
@@ -27,12 +34,19 @@ type SponsorName =
   | "Transportes Lozano"
   | "Javita"
   | "Manin"
-  | "Goblet" 
-  | "Nuevo Patrocinador 2" // Nombre del nuevo patrocinador 2
-  | "Nuevo Patrocinador 3" // Nombre del nuevo patrocinador 3
-  | "Nuevo Patrocinador 4" // Nombre del nuevo patrocinador 4
-  | "Nuevo Patrocinador 5" // Nombre del nuevo patrocinador 5
-  | "Nuevo Patrocinador 6"; // Nombre del nuevo patrocinador 6
+  | "Goblet"
+  | "Obrador de Flory"
+  | "La Casilla"
+  | "Energy"
+  | "Plan B"
+  | "Vacio"
+  | "Carpas El Neno"
+  | "Vacio2"
+  | "Deportes Acebo"
+  | "Cafe Madrid"
+  | "Street Food"
+  | "Forno Manolo"
+  | "Bar La Casera"; 
 
 export interface Sponsors {
   id: SponsorId;

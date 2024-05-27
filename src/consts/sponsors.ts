@@ -112,39 +112,123 @@ export const SPONSORS: Array<Sponsors> = [
     type: "premium",
   },
   {
-    id: "nuevo2",
-    name: "Nuevo Patrocinador 2",
-    url: "url_del_nuevo_patrocinador_2",
+    id: "obradorflory",
+    name: "Obrador de Flory",
+    url: "https://www.facebook.com/p/Obrador-Artesanal-FLORY-100056201185828/",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "premium",
+  },
+  {
+    id: "lacasilla",
+    name: "La Casilla",
+    url: "https://hotellacasilla.com/",
     image: {
       width: 200,
       height: 200,
     },
+    type: "premium",
   },
   {
-    id: "nuevo4",
-    name: "Nuevo Patrocinador 4",
-    url: "url_del_nuevo_patrocinador_2",
+    id: "energy",
+    name: "Energy",
+    url: "https://www.instagram.com/energy_disco/?hl=es",
     image: {
-      width: 200, // Ajustar el ancho según corresponda
-      height: 200, // Ajustar la altura según corresponda
+      width: 200,
+      height: 200,
     },
+    type: "premium",
   },
   {
-    id: "nuevo5",
-    name: "Nuevo Patrocinador 5",
-    url: "url_del_nuevo_patrocinador_2",
+    id: "planb",
+    name: "Plan B",
+    url: "https://www.instagram.com/planbcangas/?hl=es",
     image: {
-      width: 200, // Ajustar el ancho según corresponda
-      height: 200, // Ajustar la altura según corresponda
+      width: 200,
+      height: 200,
     },
+    type: "premium",
   },
   {
-    id: "nuevo6",
-    name: "Nuevo Patrocinador 6",
-    url: "url_del_nuevo_patrocinador_2",
+    id: "vacio",
+    name: "Vacio",
+    url: "https://cangascup.es",
     image: {
-      width: 200, // Ajustar el ancho según corresponda
-      height: 200, // Ajustar la altura según corresponda
+      width: 150,
+      height: 150,
     },
+    type: "premium",
+  },
+  {
+    id: "carpaselneno",
+    name: "Carpas El Neno",
+    url: "https://www.puertademuniellos.com/patrocinadores/carpas-el-neno/",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "premium",
+  },
+  {
+    id: "vacio2",
+    name: "Vacio2",
+    url: "https://cangascup.es",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "premium",
+  },
+  {
+    id: "deportesacebo",
+    name: "Deportes Acebo",
+    url: "https://g.co/kgs/ucZQwtT",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "standard",
+  },
+  {
+    id: "cafemadrid",
+    name: "Cafe Madrid",
+    url: "https://www.instagram.com/nuevocafemadrid/",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "standard",
+  },
+  {
+    id: "streetfood",
+    name: "Street Food",
+    url: "https://www.instagram.com/streetfoodcangas/",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "standard",
+  },
+  {
+    id: "fornomanolo",
+    name: "Forno Manolo",
+    url: "https://www.facebook.com/forno.demanolo",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "standard",
+  },
+  {
+    id: "barlacasera",
+    name: "Bar La Casera",
+    url: "https://restaurantelacasera.es/",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "standard",
   },
 ] as const;

@@ -14,21 +14,21 @@ let { data: team, error } = await supabase.from("team").select("*");
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 m-10">
       {
         team.map((team) => (
-          <div class="w-full max-w-sm bg-white bg-opacity-20 bg-blend-luminosity duration-1000 bg-cover border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+          <div class="w-full max-w-sm bg-gray-300 bg-opacity-20 bg-blend-luminosity duration-1000 bg-cover border border-gray-400 rounded-lg shadow-md">
             <div class="flex flex-col items-center pb-10">
-              <h2 class="w-full text-center text-wrap m-10 mb-3 text-xl font-bold text-white dark:text-white shadow-lg">
+              <h2 class="w-full text-center text-wrap m-10 mb-3 text-xl font-bold text-gray-800 shadow-lg">
                 {team.name}
               </h2>
-              <h5 class="mb-1 text-l font-medium text-white">
+              <h5 class="mb-1 text-l font-medium text-gray-800">
                 {team.location}
               </h5>
-              <span class="italic text-sm text-white">
+              <span class="italic text-sm text-gray-600">
                 GRUPO {team.groupId}
               </span>
               <div class="flex mt-4 md:mt-6">
                 <a
                   href={`/teams/${team.id}`}
-                  class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white  bg-gray-700 bg-opacity-50 rounded-lg hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-800 bg-gray-400 bg-opacity-50 rounded-lg hover:bg-gray-500 focus:ring-4 focus:outline-none focus:ring-gray-300"
                 >
                   Mas detalles
                 </a>
