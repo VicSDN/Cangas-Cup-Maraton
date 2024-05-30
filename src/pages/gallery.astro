@@ -5,7 +5,15 @@ import type { ComponentProps } from "react";
 const images: ComponentProps<typeof Carousel>["images"] = [
   {
     src: "https://a.storyblok.com/f/95455/1350x1080/3ef7748922/p5240368.jpg",
-    alt: "",
+    alt: "pez prueba",
+    format: "webp",
+    width: 1350,
+    height: 1080,
+    widths: [450, 675, 1350],
+  },
+  {
+    src: "https://qxrwahceimnnfklzwhrt.supabase.co/storage/v1/object/sign/MATCH%20PHOTOS/Captura_de_pantalla_20230125_105122.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJNQVRDSCBQSE9UT1MvQ2FwdHVyYV9kZV9wYW50YWxsYV8yMDIzMDEyNV8xMDUxMjIucG5nIiwiaWF0IjoxNzE3MTE1MjI1LCJleHAiOjE3NDg2NTEyMjV9.i7UFx6GGF8SmvHric06jyy5oN_IhkLhaIARq_hu_3Tw&t=2024-05-30T22%3A27%3A05.030Zhttps://qxrwahceimnnfklzwhrt.supabase.co/storage/v1/s3",
+    alt: "pez prueba",
     format: "webp",
     width: 1350,
     height: 1080,
@@ -15,12 +23,12 @@ const images: ComponentProps<typeof Carousel>["images"] = [
 ---
 
 <Layout description="Carousel Images" title="Multimedia">
-  <section>
+  <section >
     <ul id="carouselTargetList">
       {
         images.map((img, index) => {
           return (
-            <li >
+            <li>
               <a href={`/?image=${index}`} data-carousel-index={index}>
                 <img src={img.src} alt={img.alt} />
               </a>
@@ -29,6 +37,6 @@ const images: ComponentProps<typeof Carousel>["images"] = [
         })
       }
     </ul>
-    <Carousel images={images} />
+    <Carousel images={images}  />
   </section>
 </Layout>
