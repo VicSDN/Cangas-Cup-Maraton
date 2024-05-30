@@ -1,60 +1,58 @@
-## CangasCup2024:
+# Cangas Cup
 
-“CangasCup2024 es la plataforma definitiva para los amantes del futsal. Desde la programación de partidos hasta la gestión de equipos y resultados, nuestra aplicación simplifica la organización de torneos. Los administradores pueden acceder a una interfaz personalizada para mantener todo bajo control. ¡Únete a la acción y vive la pasión del futsal con CangasCup2024!”
+![project-image](https://socialify.git.ci/VicSDN/Cangas-Cup-Maraton/image?language=1&amp;owner=1&amp;name=1&amp;stargazers=1&amp;theme=Light)
 
-## Características
+¡Bienvenido al README de nuestra emocionante página web para la Cangas Cup Maratón de Futsal! Este proyecto está diseñado para brindar una plataforma completa y accesible donde los entusiastas del futsal puedan obtener toda la información relevante sobre la cangas cup 2024.
 
-- **Información del torneo**: Donde se celebra y más datos. (Para el usuario)
-- **Equipos y Jugadores**: Registra y muestra los resultados de los partidos.
-- **Interfaz de Administración**: Los organizadores pueden gestionar datos y configuraciones.
+Aquí tienes un vistazo rápido a lo que ofrece nuestra página web:
 
-## Tecnologías Utilizadas
+## Características Principales:
+- **Información del Torneo:** Detalles completos sobre la organización reglas y programación del torneo.
+- **Colaboradores:** Reconocimiento y agradecimiento a nuestros valiosos patrocinadores y colaboradores con su correspondiente link a su página de contacto.
+- **Calendario de Partidos:** Fechas horarios y ubicaciones de todos los emocionantes encuentros del torneo.
+- **Resultados:** Actualizaciones de los resultados de los partidos a medida que se desarrollan.
+- **Perfiles de Jugadores:** Información detallada sobre los jugadores participantes incluyendo estadísticas individuales y desempeño.
+- **Ranking de Jugadores:** Clasificación de los principales goleadores, asistentes, etc. del torneo destacando sus logros en la cancha.
 
-- **Frontend**:
+## 🚀 Demo
+(https://cangascup.vercel.app)
 
-  - Astro con TypeScript
-  - Tailwind CSS
+## Project Screenshots:
 
-- **Backend**:
-  - TypeScript
-  - AstroDB
-- **Diseño**
-  - Penpot[Enlace para Penpot]([https://design.penpot.app/#/view/93d0ad32-dfe5-8194-8003-fe22654ffe96?page-id=eb5eeddf-411d-8090-8004-02d3327f078e&section=interactions&index=0&share-id=af2058fc-4f53-80f4-8004-0a8021c2741b)
+[Todas las imágenes de la app , 100% responsive](https://github.com/VicSDN/Cangas-Cup-Maraton/issues/1#issue-2326671231)
+
+## 🛠️ Installation Steps:
+- Clona este repositorio en tu máquina local.
+- Instala las dependencias necesarias utilizando npm o yarn.
+- Ejecuta el servidor localmente utilizando el comando `npm start` o `yarn start`.
+- Accede a la página web desde tu navegador en la dirección local proporcionada por el servidor.
+1. Install
+    ```
+    npx install o npm install
+    ```
+
+2. Dev
+    ```
+    astro dev o npm run dev
+    ```
+
+## 🍰 Contribution Guidelines:
+
+¡Tu contribución es fundamental para mejorar y mantener nuestra página web! Aquí hay algunas formas en las que puedes contribuir:
+- Reportar errores o problemas.
+- Sugerir nuevas características o mejoras.
+- Enviar solicitudes de extracción para corregir errores o agregar nuevas funcionalidades.
+
+**Tecnologías Utilizadas:**
+- **Frontend:** HTML, CSS, JavaScript (Astro)
+- **Backend:** Supabase
+- **Base de Datos:** PostgreSQL
 
 
-## Uso
 
-- Como usuario:
-  - Accede a la página de inicio para ver la información general del maratón.
-  - Consultar horarios de la maratón.
-  - Ver patrocinadores oficiales y acceder a sus web/redes sociales
-  - Ver rankings de jugadores(Goles, tarjetas, mvp)
-- Como admin:
-- (Fase de desarrollo)
-  - Añadir , editar y borrar equipos.
-  - Añadir , editar y borrar jugadores.
-  - Añadir , editar y borrar estadisticas de los jugadores.
+¡Esperamos que disfrutes explorando nuestra página web y siguiendo de cerca la emocionante acción de la Maratón de Futsal! Si tienes alguna pregunta o sugerencia no dudes en ponerte en contacto con nosotros. ¡Que comience el juego!
 
-## Para lanzar el proyecto necesitamos
+## 💖 Like my work?
 
-**Para el frontend**
-Tenemos dos app diferentes una para el Admin y otra para el User,
-```bash
-  cd frontend              cd frontend
-  cd user                  cd admin 
-```
-
-por lo tanto entramos al directorio de cada tipo para iniciarlo y hacemos:
-```bash
-  npm install
-  npm run dev
-```
-
-**Para el backend**
-Necesitamos una base de datos MySQL. Puedes usar docker para lanzarla, haciendo:
- 
-```bash
-    docker run --name mysql-cup -e MYSQL_ROOT_PASSWORD=12345678 -e MYSQL_DATABASE=cangascup -p 3306:3306 -d mysql:latest
-
-   mvn clean install mvn spring-boot:run  o ./mvnw spring-boot:run
-```
+Versión 1.0
+Version 2.0 (En desarrollo página admin)
