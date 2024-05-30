@@ -18,6 +18,7 @@
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "astro": "^4.9.0",
+    "astro-carousel": "^2.0.8",
     "date-fns": "^3.6.0",
     "react": "^18.2.0",
     "react-responsive-carousel": "^3.2.23",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.29",
+    "sass": "^1.77.4",
     "tailwindcss-animated": "^1.0.1"
   }
 }
