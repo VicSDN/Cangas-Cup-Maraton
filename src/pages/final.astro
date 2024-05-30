@@ -2,8 +2,165 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout description="Cuadro Fase Final" title="Cuadro Fase Final Cangas Cup">
-  <section class="w-3/4 h3/4 flex items-center border border-white justify-center text-center ">
-    <h1 class="text-4xl">Estamos trabajando en ello!!!!</h1>
-  </section>
+<Layout description="Fase Final Cangas Cup" title="Fase final">
+  <h1>Horario Orientativo</h1>
+  <div class="container mx-auto p-4 text-gray-300">
+    <div class="text-center mb-8">
+      <h1 class="text-2xl font-bold">Cuartos de Final</h1>
+    </div>
+
+    <div class="round">
+      <div class="match w-full sm:w-3/4 md:w-5/12 lg:w-1/4 mx-auto mb-4">
+        <div class="match-time">15/06 21:00</div>
+        <div class="match-team">
+          <span>Cuartos de final 1</span>
+        </div>
+        <div class="vs">vs</div>
+        <div class="match-team">
+          <span>Cuartos de final 2</span>
+        </div>
+      </div>
+      <div class="match w-full sm:w-3/4 md:w-5/12 lg:w-1/4 mx-auto mb-4">
+        <div class="match-time">15/06 22:00</div>
+        <div class="match-team">
+          <span>Cuartos de final 3</span>
+        </div>
+        <div class="vs">vs</div>
+        <div class="match-team">
+          <span>Cuartos de final 4</span>
+        </div>
+      </div>
+      <div class="match w-full sm:w-3/4 md:w-5/12 lg:w-1/4 mx-auto mb-4">
+        <div class="match-time">15/06 23:00</div>
+        <div class="match-team">
+          <span>Cuartos de final 5</span>
+        </div>
+        <div class="vs">vs</div>
+        <div class="match-team">
+          <span>Cuartos de final 6</span>
+        </div>
+      </div>
+      <div class="match w-full sm:w-3/4 md:w-5/12 lg:w-1/4 mx-auto mb-4">
+        <div class="match-time">15/06 24:00</div>
+        <div class="match-team">
+          <span>Cuartos de final 7</span>
+        </div>
+        <div class="vs">vs</div>
+        <div class="match-team">
+          <span>Cuartos de final 8</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mb-8">
+      <h1 class="text-2xl font-bold">Semifinales</h1>
+    </div>
+
+    <div class="round">
+      <div class="match w-full sm:w-3/4 md:w-5/12 lg:w-1/4 mx-auto mb-4">
+        <div class="match-time">16/06 12:00</div>
+        <div class="match-team">
+          <span>Semifinalista 1</span>
+        </div>
+        <div class="vs">vs</div>
+        <div class="match-team">
+          <span>Semifinalista 2</span>
+        </div>
+      </div>
+      <div class="match w-full sm:w-3/4 md:w-5/12 lg:w-1/4 mx-auto mb-4">
+        <div class="match-time">16/06 13:00</div>
+        <div class="match-team">
+          <span>Semifinalista 3</span>
+        </div>
+        <div class="vs">vs</div>
+        <div class="match-team">
+          <span>Semifinalista 4</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mb-8">
+      <h1 class="text-2xl font-bold">Final</h1>
+    </div>
+    <section class="flex flex-col">
+      <div class="round">
+        <div class="match w-full sm:w-3/4 md:w-5/12 lg:w-1/4 mx-auto mb-4">
+          <div class="match-time">16/06 18:00</div>
+          <div class="match-team">
+            <span>Ganador semifinal 1</span>
+          </div>
+          <div class="vs">vs</div>
+          <div class="match-team">
+            <span>Ganador semifinal 2</span>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mb-8">
+        <h1 class="text-2xl font-bold">Campeón Cangas Cup 2024</h1>
+      </div>
+      <div class="round">
+        <div
+          class="match w-full text-center items-center sm:w-3/4 md:w-5/12 lg:w-1/4 mx-auto mb-4 flex gap-5"
+        >
+          <span class="text-2xl text-center">Equipo Campeón</span>
+          <img src="/CANGASCUPLOGO.png" class="w-[70px] h-auto" />
+        </div>
+      </div>
+    </section>
+    <div class="text-center mb-8">
+      <h1 class="text-2xl font-bold">Mejor equipo Local</h1>
+    </div>
+    <div class="round">
+      <div
+        class="match w-full text-center items-center sm:w-3/4 md:w-5/12 lg:w-1/4 mx-auto mb-4 flex gap-5"
+      >
+        <span class="text-2xl text-center">Campeón Local</span>
+        <img src="/EscudoCangas.png" class="w-[70px] h-auto" />
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<style>
+  .round {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: black;
+  }
+
+  .match {
+    background-color: #bfbfbf;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .match-header {
+    margin-bottom: 1rem;
+  }
+
+  .match-team {
+    margin-bottom: 0.5rem;
+    color: black;
+    font-size: 1.1rem;
+  }
+
+  .match-time {
+    font-size: 1rem; /* Tamaño un poco más grande */
+    color: black;
+    font-style: italic;
+    font-weight: bold; /* Negrita */
+    margin-bottom: 0.5rem;
+  }
+
+  .vs {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: black;
+  }
+</style>

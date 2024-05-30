@@ -28,7 +28,8 @@ type SponsorId =
   | "sidrerianarcea"
   | "varesport"
   | "deportescarro"
-  | "asesoriaCGL"; 
+  | "asesoriaCGL"
+  | "barazul"; 
 
 type SponsorName =
   | "Ayuntamiento Cangas del Narcea"
@@ -60,7 +61,8 @@ type SponsorName =
   | "Sidreria Narcea"
   | "Varesport"
   | "AsesoriaCGL"
-  | "Deportescarro"; 
+  | "Deportescarro"
+  | "Bar Azul"; 
 
 export interface Sponsors {
   id: SponsorId;

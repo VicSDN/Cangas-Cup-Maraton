@@ -301,4 +301,14 @@ export const SPONSORS: Array<Sponsors> = [
     },
     type: "standard",
   },
+  {
+    id: "barazul",
+    name: "Bar Azul",
+    url: "https://g.co/kgs/WkT1x7H",
+    image: {
+      width: 200,
+      height: 200,
+    },
+    type: "standard",
+  },
 ] as const;

@@ -100,7 +100,7 @@ Cualquier equipo que incurra en alineación indebida será sancionado con la pé
 
 Cualquier equipo que provoque la suspensión de un partido, bien como consecuencia de indisciplina colectiva,abandono del terreno de juego o agresión a contrarios, árbitro, asistentes, organización, etc., bien por la invasión del terreno de juego de seguidores del mismo equipo, o bien por cualquier otra causa que induzca al árbitro a decretar la suspensión delencuentro, será sancionado con la pérdida del partido por un resultado de 5-0, salvo que en el momento de la suspensión el resultado fuera desfavorable por un mayor número de goles en su contra.
 
-Cada equipo participante será responsabledelcomportamiento desus jugadores. Una conducta inadecuada por parte de uno o varios jugadores puede provocar la expulsión del equipo del torneo.
+Cada equipo participante será responsable del comportamiento de sus jugadores. Una conducta inadecuada por parte de uno o varios jugadores puede provocar la expulsión del equipo del torneo.
 
 **ARTÍCULO 13 – EQUIPO LOCAL**
 
@@ -117,7 +117,7 @@ Una vez finalizada la final del torneo se llevará a cabo la entrega de premios 
 - 3º y 4º – 200€ + Trofeo. \*
 - Mejor equipo local – 100€ + Inscripción gratuita para el siguiente torneo.\*\*
 
-  \*(No se disputará partido por el tercer y cuarto puesto, por lo que las posiciones se decidirán en base al mismo formato explicado en el artículo 2 de este reglamento). \*\*(Enelsupuesto dequelosúltimosequiposlocalesque sigancompitiendo eneltorneo se queden eliminados en la misma ronda, se decidirá el mejor de ellos en base al mismo formato explicado en el artículo 2 de este reglamento).
+  \*(No se disputará partido por el tercer y cuarto puesto, por lo que las posiciones se decidirán en base al mismo formato explicado en el artículo 2 de este reglamento). \*\*(En el supuesto de que los últimos equipos locales que sigan compitiendo en el torneo se queden eliminados en la misma ronda, se decidirá el mejor de ellos en base al mismo formato explicado en el artículo 2 de este reglamento).
 
 **Premios Individuales**
 
