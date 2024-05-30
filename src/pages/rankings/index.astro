@@ -20,7 +20,7 @@ function sortPlayers(category) {
 }
 
 const playerStats = {
-  goleadores: sortPlayers("goal"),
+  goles: sortPlayers("goal"),
   asistencias: sortPlayers("assist"),
   mvps: sortPlayers("mvp"),
   amarillas: sortPlayers("yellowCard"),
@@ -28,7 +28,7 @@ const playerStats = {
 };
 
 const cardColors = {
-  goleadores: "bg-gray-500",
+  goles: "bg-gray-500",
   asistencias: "bg-gray-600",
   mvps: "bg-gray-700",
   amarillas: "bg-gray-800",
@@ -40,57 +40,63 @@ const cardColors = {
   <div class="flex flex-wrap gap-4 m-20 mt-32">
     {
       Object.entries(playerStats).map(([category, players], index) => (
-        <section
-          class="border p-4 rounded-md flex-1 min-w-[200px] text-center"
-        >
+        <section class="border p-4 rounded-md flex-1 min-w-[200px] text-center">
           <h1 class="text-2xl border-b-2">{`MAX ${category.toUpperCase()}`}</h1>
-          {players.slice(0, 5).map((p, playerIndex) => (
-            <a  href={`/rankings/${p.id}`} class="block my-4">
-              <div
-                class={`shadow-md w-full max-w-xs rounded-xl ${cardColors[category]}`}
-              >
-                <div class="p-4 flex items-center justify-between text-white">
-                  <div>
-                    <p class="text-xl font-bold">
-                      {playerIndex + 1}. {p.name} {p.secondName}
-                    </p>
-                  </div>
-                  <div>
-                    {category === "goleadores" && (
-                      <div class="flex items-center gap-2">
-                        <Goal style="font-size: 30px;" />
-                        <p class="text-xl">{p.goal}</p>
-                      </div>
-                    )}
-                    {category === "asistencias" && (
-                      <div class="flex items-center gap-2">
-                        <Assist style="font-size: 30px;" />
-                        <p class="text-xl">{p.assist}</p>
-                      </div>
-                    )}
-                    {category === "mvps" && (
-                      <div class="flex items-center gap-2">
-                        <Mvp style="font-size: 30px;" />
-                        <p class="text-xl">{p.mvp}</p>
-                      </div>
-                    )}
-                    {category === "amarillas" && (
-                      <div class="flex items-center gap-2">
-                        <YellowCard style="font-size: 30px;" />
-                        <p class="text-xl">{p.yellowCard}</p>
-                      </div>
-                    )}
-                    {category === "rojas" && (
-                      <div class="flex items-center gap-2">
-                        <RedCard style="font-size: 30px;" />
-                        <p class="text-xl">{p.redCard}</p>
-                      </div>
-                    )}
+          {players.length === 0 ? (
+            <div
+              class={`shadow-md w-full max-w-xs rounded-xl ${cardColors[category]} p-4 text-white`}
+            >
+              <p class="text-xl">Todavía no ha comenzado el torneo.</p>
+            </div>
+          ) : (
+            players.slice(0, 5).map((p, playerIndex) => (
+              <a href={`/rankings/${p.id}`} class="block my-4">
+                <div
+                  class={`shadow-md w-full max-w-xs rounded-xl ${cardColors[category]}`}
+                >
+                  <div class="p-4 flex flex-col items-center text-white">
+                    <div class="flex flex-col items-center">
+                      <p class="text-xl font-bold">
+                        {playerIndex + 1}. {p.name} {p.secondName}
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-2 mt-2">
+                      {category === "goles" && (
+                        <>
+                          <Goal style="font-size: 30px;" />
+                          <p class="text-xl">{p.goal}</p>
+                        </>
+                      )}
+                      {category === "asistencias" && (
+                        <>
+                          <Assist style="font-size: 30px;" />
+                          <p class="text-xl">{p.assist}</p>
+                        </>
+                      )}
+                      {category === "mvps" && (
+                        <>
+                          <Mvp style="font-size: 30px;" />
+                          <p class="text-xl">{p.mvp}</p>
+                        </>
+                      )}
+                      {category === "amarillas" && (
+                        <>
+                          <YellowCard style="font-size: 30px;" />
+                          <p class="text-xl">{p.yellowCard}</p>
+                        </>
+                      )}
+                      {category === "rojas" && (
+                        <>
+                          <RedCard style="font-size: 30px;" />
+                          <p class="text-xl">{p.redCard}</p>
+                        </>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-          ))}
+              </a>
+            ))
+          )}
           <button
             class={`mt-4 ${cardColors[category]} text-white px-4 py-2 rounded`}
             data-dialog-target={`${category}Modal`}
@@ -116,29 +122,28 @@ const cardColors = {
             Cerrar
           </button>
         </form>
-        {players.map((p, playerIndex) => (
-          <div
-        
-            class="flex flex-col items-center justify-center mb-2"
-          >
-            <h1 class="text-2xl font-bold">
-              {playerIndex + 1}. {p.name}
-            </h1>
-            {category === "goleadores" && (
-              <p class="text-xl">Goles: {p.goal}</p>
-            )}
-            {category === "asistencias" && (
-              <p class="text-xl">Asistencias: {p.assist}</p>
-            )}
-            {category === "mvps" && <p class="text-xl">MVP: {p.mvp}</p>}
-            {category === "amarillas" && (
-              <p class="text-xl">Tarjetas Amarillas: {p.yellowCard}</p>
-            )}
-            {category === "rojas" && (
-              <p class="text-xl">Tarjetas Rojas: {p.redCard}</p>
-            )}
-          </div>
-        ))}
+        {players.length === 0 ? (
+          <div class="text-white text-xl">Todavía no ha comenzado el torneo.</div>
+        ) : (
+          players.map((p, playerIndex) => (
+            <div class="flex flex-col items-center justify-center mb-2">
+              <h1 class="text-2xl font-bold">
+                {playerIndex + 1}. {p.name} {p.secondName}
+              </h1>
+              {category === "goles" && <p class="text-xl">Goles: {p.goal}</p>}
+              {category === "asistencias" && (
+                <p class="text-xl">Asistencias: {p.assist}</p>
+              )}
+              {category === "mvps" && <p class="text-xl">MVP: {p.mvp}</p>}
+              {category === "amarillas" && (
+                <p class="text-xl">Tarjetas Amarillas: {p.yellowCard}</p>
+              )}
+              {category === "rojas" && (
+                <p class="text-xl">Tarjetas Rojas: {p.redCard}</p>
+              )}
+            </div>
+          ))
+        )}
       </dialog>
     ))
   }
