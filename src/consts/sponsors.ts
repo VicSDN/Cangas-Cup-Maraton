@@ -216,8 +216,8 @@ export const SPONSORS: Array<Sponsors> = [
     name: "Forno Manolo",
     url: "https://www.facebook.com/forno.demanolo",
     image: {
-      width: 150,
-      height: 150,
+      width: 160,
+      height: 120,
     },
     type: "standard",
   },
