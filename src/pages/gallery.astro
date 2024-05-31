@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Carousel } from "astro-carousel";
+import type { ComponentProps } from "react";
+const images: ComponentProps<typeof Carousel>["images"] = [
+  {
+    src: "https://a.storyblok.com/f/95455/1350x1080/3ef7748922/p5240368.jpg",
+    alt: "",
+    format: "webp",
+    width: 1350,
+    height: 1080,
+    widths: [450, 675, 1350],
+  },
+];
+---
+
+<Layout description="Carousel Images" title="Multimedia">
+  <section>
+    <ul id="carouselTargetList">
+      {
+        images.map((img, index) => {
+          return (
+            <li >
+              <a href={`/?image=${index}`} data-carousel-index={index}>
+                <img src={img.src} alt={img.alt} />
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+    <Carousel images={images} />
+  </section>
+</Layout>
