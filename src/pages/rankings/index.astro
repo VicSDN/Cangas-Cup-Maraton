@@ -40,12 +40,10 @@ const cardColors = {
   <div class="flex flex-wrap gap-4 m-20 mt-32">
     {
       Object.entries(playerStats).map(([category, players], index) => (
-        <section
-          class="border p-4 rounded-md flex-1 min-w-[200px] text-center"
-        >
+        <section class="border p-4 rounded-md flex-1 min-w-[200px] text-center">
           <h1 class="text-2xl border-b-2">{`MAX ${category.toUpperCase()}`}</h1>
           {players.slice(0, 5).map((p, playerIndex) => (
-            <a  href={`/rankings/${p.id}`} class="block my-4">
+            <a href={`/rankings/${p.id}`} class="block my-4">
               <div
                 class={`shadow-md w-full max-w-xs rounded-xl ${cardColors[category]}`}
               >
@@ -117,10 +115,7 @@ const cardColors = {
           </button>
         </form>
         {players.map((p, playerIndex) => (
-          <div
-        
-            class="flex flex-col items-center justify-center mb-2"
-          >
+          <div class="flex flex-col items-center justify-center mb-2">
             <h1 class="text-2xl font-bold">
               {playerIndex + 1}. {p.name}
             </h1>
@@ -142,10 +137,10 @@ const cardColors = {
       </dialog>
     ))
   }
-  <script>
-    document
-      .querySelectorAll("button[data-dialog-target]")
-      .forEach((button) => {
+</Layout>
+<script>
+    document.addEventListener("astro:page-load", () => {
+      document.querySelectorAll("button[data-dialog-target]").forEach((button) => {
         button.addEventListener("click", () => {
           const dialogId = button.getAttribute("data-dialog-target");
           const dialog = document.getElementById(dialogId);
@@ -154,14 +149,15 @@ const cardColors = {
           }
         });
       });
-
-    document.querySelectorAll("[data-close-dialog]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const dialog = button.closest("dialog");
-        if (dialog instanceof HTMLDialogElement) {
-          dialog.close();
-        }
-      });
     });
-  </script>
-</Layout>
+
+
+  document.querySelectorAll("[data-close-dialog]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const dialog = button.closest("dialog");
+      if (dialog instanceof HTMLDialogElement) {
+        dialog.close();
+      }
+    });
+  });
+</script>
