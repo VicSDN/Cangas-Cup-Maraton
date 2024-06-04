@@ -245,42 +245,34 @@ const pages = [
 <script>
   import { $ } from "../lib/dom-selector";
 
-  function toggleMenu(nav, menuMobileContent, buttons) {
-    const isOpen = menuMobileContent?.classList.toggle("open");
-    nav?.classList.toggle("open", isOpen);
-    document.body.classList.toggle("overflow-hidden", isOpen);
-    document.body.classList.toggle("lg:overflow-auto", !isOpen);
-    buttons.forEach((button) => {
-      button.classList.toggle("open", isOpen);
-      button.setAttribute("aria-expanded", String(isOpen));
-      button.setAttribute(
-        "aria-label",
-        isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"
-      );
-    });
+  function toggleMenu(
+    nav: HTMLElement | null,
+    menuMobileContent: HTMLElement | null,
+    navContent: HTMLElement | null
+  ) {
+    menuMobileContent?.classList.toggle("open");
+    nav?.classList.toggle("open");
+    navContent?.classList.toggle("animate-bounce-fade-in");
+    document.body.classList.toggle("overflow-hidden");
+    document.body.classList.toggle("lg:overflow-auto");
   }
 
   document.addEventListener("astro:page-load", () => {
     const nav = $("nav");
     const menuButton = $("#menuButton");
     const innerMenuButton = $("#innerMenuButton");
-    const menuMobileContent = $("#menuMobileContent");
-    const buttons = [menuButton, innerMenuButton];
+    const menuMobileContext = $("#menuMobileContent");
+    const navContent = $(".navContent");
 
-    if (menuButton) {
-      menuButton.addEventListener("click", () => {
-        toggleMenu(nav, menuMobileContent, buttons);
-      });
-    }
+    menuButton?.addEventListener("hamburgerButtonClicked", () =>
+      toggleMenu(nav, menuMobileContext, navContent)
+    );
+    innerMenuButton?.addEventListener("hamburgerButtonClicked", () =>
+      toggleMenu(nav, menuMobileContext, navContent)
+    );
 
-    if (innerMenuButton) {
-      innerMenuButton.addEventListener("click", () => {
-        toggleMenu(nav, menuMobileContent, buttons);
-      });
-    }
-
-    if (menuMobileContent?.classList.contains("open")) {
-      toggleMenu(nav, menuMobileContent, buttons);
+    if (menuMobileContext?.classList.contains("open")) {
+      toggleMenu(nav, menuMobileContext, navContent);
     }
   });
 </script>

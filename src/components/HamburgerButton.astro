@@ -43,23 +43,25 @@ const genericHamburgerLine = `h-[2px] ${width} bg-gray-300 transition ease trans
   } as const;
 
   document.addEventListener("astro:page-load", () => {
+    const hamburgerButton = $(DISPLAY.hamburgerMenuClass);
+
     $$(DISPLAY.hamburgerMenuClass).forEach((button) => {
       button.addEventListener("click", () => {
-        button.classList.toggle(DISPLAY.open);
-        const isMenuOpen = button.classList.contains(DISPLAY.open);
-        button.setAttribute("aria-expanded", String(isMenuOpen));
-        button.setAttribute(
+        const hamburgerButton = $(DISPLAY.hamburgerMenuClass)!;
+        hamburgerButton.classList.toggle(DISPLAY.open);
+        const isMenuOpen = hamburgerButton.classList.contains(DISPLAY.open);
+        hamburgerButton.setAttribute("aria-expanded", String(isMenuOpen));
+        hamburgerButton.setAttribute(
           "aria-label",
           isMenuOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"
         );
         const hamburgerButtonClick = new CustomEvent(
-          DISPLAY.hamburgerButtonClicked,
-          {
-            bubbles: true,
-          }
+          DISPLAY.hamburgerButtonClicked
         );
-        button.dispatchEvent(hamburgerButtonClick);
+        hamburgerButton.dispatchEvent(hamburgerButtonClick);
       });
     });
+    if (hamburgerButton?.classList?.contains(DISPLAY.open))
+      hamburgerButton?.classList?.remove(DISPLAY.open);
   });
 </script>
