@@ -123,7 +123,9 @@ const cardColors = {
           </button>
         </form>
         {players.length === 0 ? (
-          <div class="text-white text-xl">Todavía no ha comenzado el torneo.</div>
+          <div class="text-white text-xl">
+            Todavía no ha comenzado el torneo.
+          </div>
         ) : (
           players.map((p, playerIndex) => (
             <div class="flex flex-col items-center justify-center mb-2">
@@ -147,7 +149,10 @@ const cardColors = {
       </dialog>
     ))
   }
-  <script>
+</Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
     document
       .querySelectorAll("button[data-dialog-target]")
       .forEach((button) => {
@@ -159,14 +164,14 @@ const cardColors = {
           }
         });
       });
+  });
 
-    document.querySelectorAll("[data-close-dialog]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const dialog = button.closest("dialog");
-        if (dialog instanceof HTMLDialogElement) {
-          dialog.close();
-        }
-      });
+  document.querySelectorAll("[data-close-dialog]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const dialog = button.closest("dialog");
+      if (dialog instanceof HTMLDialogElement) {
+        dialog.close();
+      }
     });
-  </script>
-</Layout>
+  });
+</script>
