@@ -1,11 +1,11 @@
 ---
 import { supabase } from "../db/supabase";
 
-// Fetch match and team data at build time
-const { data: matches, error: matchError } = await supabase
+
+const { data: matches } = await supabase
   .from("match")
   .select("*");
-const { data: teams, error: teamError } = await supabase
+const { data: teams } = await supabase
   .from("team")
   .select("*");
 
