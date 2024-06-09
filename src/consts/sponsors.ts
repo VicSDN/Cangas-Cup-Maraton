@@ -311,4 +311,24 @@ export const SPONSORS: Array<Sponsors> = [
     },
     type: "standard",
   },
+  {
+    id: "barmagadan",
+    name: "Bar Magadan",
+    url: "https://www.facebook.com/people/Bar-Restaurante-Magadan/100063656434186/?paipv=0&eav=AfbI-vq3PSWc0VF5W7uneNRZ87OwCCGiWeZ2CHh1SuhL7Ut9TMQdyQTChh8XngJpY8Y&_rdr",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "standard",
+  },
+  {
+    id: "tiendaadela",
+    name: "Tienda Adela",
+    url: "https://www.facebook.com/huertinadeadela/",
+    image: {
+      width: 150,
+      height: 150,
+    },
+    type: "standard",
+  },
 ] as const;
