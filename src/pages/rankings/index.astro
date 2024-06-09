@@ -113,10 +113,10 @@ const cardColors = {
         id={`${category}Modal`}
         class="p-6 border rounded-md text-center w-full h-full fixed inset-0 overflow-auto bg-gray-900 bg-opacity-90 z-50"
       >
-        <h1 class="text-2xl mb-4">{`Jugadores con más ${category}`}</h1>
+        <h1 class="text-2xl mb-4 drop-shadow-lg ">{`Jugadores con más ${category}`}</h1>
         <form method="dialog">
           <button
-            class="mt-4 mb-4 bg-red-500 text-white px-4 py-2 rounded"
+            class="close-dialog-button bg-red-500 text-white px-2 py-1 text-sm rounded fixed top-6 left-6 sm:px-4 sm:py-2 sm:text-base sm:top-8 sm:left-8 md:px-6 md:py-3 md:text-lg md:top-12 md:left-12 lg:px-6 lg:py-4 lg:text-lg lg:top-16 lg:left-16"
             data-close-dialog
           >
             Cerrar
@@ -129,19 +129,25 @@ const cardColors = {
         ) : (
           players.map((p, playerIndex) => (
             <div class="flex flex-col items-center justify-center mb-2">
-              <h1 class="text-2xl font-bold">
+              <h1 class="text-white text-2xl font-bold">
                 {playerIndex + 1}. {p.name} {p.secondName}
               </h1>
-              {category === "goles" && <p class="text-xl">Goles: {p.goal}</p>}
-              {category === "asistencias" && (
-                <p class="text-xl">Asistencias: {p.assist}</p>
+              {category === "goles" && (
+                <p class="text-white text-xl">Goles: {p.goal}</p>
               )}
-              {category === "mvps" && <p class="text-xl">MVP: {p.mvp}</p>}
+              {category === "asistencias" && (
+                <p class="text-white text-xl">Asistencias: {p.assist}</p>
+              )}
+              {category === "mvps" && (
+                <p class="text-white text-xl">MVP: {p.mvp}</p>
+              )}
               {category === "amarillas" && (
-                <p class="text-xl">Tarjetas Amarillas: {p.yellowCard}</p>
+                <p class="text-white text-xl">
+                  Tarjetas Amarillas: {p.yellowCard}
+                </p>
               )}
               {category === "rojas" && (
-                <p class="text-xl">Tarjetas Rojas: {p.redCard}</p>
+                <p class="text-white text-xl">Tarjetas Rojas: {p.redCard}</p>
               )}
             </div>
           ))
