@@ -9,6 +9,7 @@ import Footer from "../components/Footer.astro";
 import "@fontsource-variable/onest";
 import ButtonUp from "../components/ButtonUp.astro";
 import { ViewTransitions } from "astro:transitions";
+import SpeedInsights from "@vercel/speed-insights/astro";
 ---
 
 <!doctype html>
@@ -25,7 +26,7 @@ import { ViewTransitions } from "astro:transitions";
     <Header class="mb-4" />
     <slot />
     <Footer />
-
+    <SpeedInsights />
     <ButtonUp />
     <style is:global>
       :root {
