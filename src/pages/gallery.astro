@@ -7,8 +7,8 @@ const images: ComponentProps<typeof Carousel>["images"] = [
     src: "https://a.storyblok.com/f/95455/1350x1080/3ef7748922/p5240368.jpg",
     alt: "pez prueba",
     format: "webp",
-    width: 1350,
-    height: 1080,
+    width: 800,
+    height: 600,
     widths: [450, 675, 1350],
   },
   {
@@ -23,20 +23,32 @@ const images: ComponentProps<typeof Carousel>["images"] = [
 ---
 
 <Layout description="Carousel Images" title="Multimedia">
-  <section >
-    <ul id="carouselTargetList">
+  <section class="p-6">
+    <ul
+      id="carouselTargetList"
+      class="grid grid-cols-6 gap-4 md:grid-cols-2 md:gap-2"
+    >
       {
         images.map((img, index) => {
           return (
-            <li>
-              <a href={`/?image=${index}`} data-carousel-index={index}>
-                <img src={img.src} alt={img.alt} />
+            <li class="w-full ">
+              <a
+                href={`/?image=${index}`}
+                data-carousel-index={index}
+                class="block"
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  class="w-full h-auto min-w-[30%]"
+                />
               </a>
             </li>
           );
         })
       }
     </ul>
-    <Carousel images={images}  />
+
+    <Carousel images={images} />
   </section>
 </Layout>
