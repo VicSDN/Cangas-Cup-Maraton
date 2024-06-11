@@ -23,6 +23,7 @@ Aquí tienes un vistazo rápido a lo que ofrece nuestra página web:
 
 ## 🛠️ Installation Steps:
 - Clona este repositorio en tu máquina local.
+- Crea un archivo .env.local(Necesitarás tus propias claves supabase).
 - Instala las dependencias necesarias utilizando npm o yarn.
 - Ejecuta el servidor localmente utilizando el comando `npm start` o `yarn start`.
 - Accede a la página web desde tu navegador en la dirección local proporcionada por el servidor.
