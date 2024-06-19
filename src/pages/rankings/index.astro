@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import { supabase } from "../../db/supabase";
 import Goal from "./icons/Goal.astro";
-import Assist from "./icons/Assist.astro";
 import YellowCard from "./icons/YellowCard.astro";
 import RedCard from "./icons/RedCard.astro";
 
@@ -20,14 +19,12 @@ function sortPlayers(category) {
 
 const playerStats = {
   goles: sortPlayers("goal"),
-  asistencias: sortPlayers("assist"),
   amarillas: sortPlayers("yellowCard"),
   rojas: sortPlayers("redCard"),
 };
 
 const cardColors = {
   goles: "bg-gray-500",
-  asistencias: "bg-gray-600",
   amarillas: "bg-gray-800",
   rojas: "bg-gray-900",
 };
@@ -62,12 +59,6 @@ const cardColors = {
                         <>
                           <Goal style="font-size: 30px;" />
                           <p class="text-xl">{p.goal}</p>
-                        </>
-                      )}
-                      {category === "asistencias" && (
-                        <>
-                          <Assist style="font-size: 30px;" />
-                          <p class="text-xl">{p.assist}</p>
                         </>
                       )}
                       {category === "amarillas" && (
@@ -125,9 +116,6 @@ const cardColors = {
               </h1>
               {category === "goles" && (
                 <p class="text-white text-xl">Goles: {p.goal}</p>
-              )}
-              {category === "asistencias" && (
-                <p class="text-white text-xl">Asistencias: {p.assist}</p>
               )}
               {category === "amarillas" && (
                 <p class="text-white text-xl">

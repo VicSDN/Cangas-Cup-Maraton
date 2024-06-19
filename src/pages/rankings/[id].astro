@@ -45,17 +45,6 @@ let { data: team } = await supabase
                     {player.goal}
                   </dd>
                 </div>
-
-                <div class="flex flex-col px-4 py-8 text-center">
-                  <dt class="order-last text-lg font-medium text-gray-500">
-                    Asistencias
-                  </dt>
-                  <dd
-                    class={`text-4xl font-extrabold ${player.assist === 0 ? "text-gray-800" : "text-blue-600"} md:text-5xl`}
-                  >
-                    {player.assist}
-                  </dd>
-                </div>
                 <div class="flex flex-col px-4 py-8 text-center">
                   <dt class="order-last text-lg font-medium text-gray-500">
                     Tarjetas Rojas
