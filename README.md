@@ -4,6 +4,23 @@
 
 ¡Bienvenido al README de nuestra emocionante página web para la Cangas Cup Maratón de Futsal! Este proyecto está diseñado para brindar una plataforma completa y accesible donde los entusiastas del futsal puedan obtener toda la información relevante sobre la cangas cup 2024.
 
+## Descripción detallada
+-La app consta de dos partes , la de usuario normal y la de admin. 
+-El usuario normal, podra visualizar información del torneo , así como la ubicación , colaboradores , consultar jugadores , equipos  y resultados.
+-El administrador, podra añadir, eliminar y modificar jugadores, equipos y resultados.
+
+Construido Con 🛠️
+
+Explica qué tecnologías usaste para construir este proyecto. Aquí algunos ejemplos:
+
+    Astro - El lenguaje utilizado
+    Supabase - Backend
+    Postgresql - Sistema de base de datos
+    Taildwind CSS - Framework de CSS
+    Vitest - Para los test unitarios
+    Cypress - Test Component and end-to-end
+
+
 Aquí tienes un vistazo rápido a lo que ofrece nuestra página web:
 
 ## Características Principales:
@@ -49,11 +66,14 @@ Aquí tienes un vistazo rápido a lo que ofrece nuestra página web:
 - **Backend:** Supabase
 - **Base de Datos:** PostgreSQL
 
+## Versionado 📌
+Usamos Git para el versionado. Para las versiones disponibles, consulta la página oficial de Git.
 
 
-¡Esperamos que disfrutes explorando nuestra página web y siguiendo de cerca la emocionante acción de la Maratón de Futsal! Si tienes alguna pregunta o sugerencia no dudes en ponerte en contacto con nosotros. ¡Que comience el juego!
+¡Esperamos que disfrutes explorando nuestra página web y siguiendo de cerca la emocionante acción de la Maratón de Futsal! Si tienes alguna pregunta o sugerencia no dudes en ponerte en contacto con nosotros. ¡Que comience el juego! 
 
 ## 💖 Like my work?
 
 Versión 1.0
-Version 2.0 (En desarrollo página admin)
+
+Version 2.0 (En desarrollo)
