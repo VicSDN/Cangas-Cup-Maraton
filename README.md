@@ -69,6 +69,11 @@ Aquí tienes un vistazo rápido a lo que ofrece nuestra página web:
 ## Versionado 📌
 Usamos Git para el versionado. Para las versiones disponibles, consulta la página oficial de Git.
 
+Contacto
+Si tienes alguna pregunta o sugerencia sobre este proyecto, puedes contactarme a través de:
+
+Email: vicsdn@protonmail.com
+GitHub: github.com/VicSDN
 
 ¡Esperamos que disfrutes explorando nuestra página web y siguiendo de cerca la emocionante acción de la Maratón de Futsal! Si tienes alguna pregunta o sugerencia no dudes en ponerte en contacto con nosotros. ¡Que comience el juego! 
 
