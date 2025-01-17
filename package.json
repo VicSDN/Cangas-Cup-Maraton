@@ -26,7 +26,6 @@
     "inflight": "^1.0.6",
     "npmlog": "^7.0.1",
     "react": "^19.0.0",
-    "react-responsive-carousel": "^3.2.23",
     "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.17"
   },
