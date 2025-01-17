@@ -1,0 +1,127 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "^/_astro/(.*)$",
+			"headers": {
+				"cache-control": "public, max-age=31536000, immutable"
+			},
+			"continue": true
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^\\/_server-islands\\/([^/]+?)\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/_image\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/final\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/rankings\\/icons\\/Assist\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/rankings\\/icons\\/Goal\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/rankings\\/icons\\/Mvp\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/rankings\\/icons\\/RedCard\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/rankings\\/icons\\/YellowCard\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/rankings\\/([^/]+?)\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/rankings\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/regulations\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/results\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/teams\\/([^/]+?)\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/teams\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2024\\/teamsandresults\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/final\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/rankings\\/icons\\/Assist\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/rankings\\/icons\\/Goal\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/rankings\\/icons\\/Mvp\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/rankings\\/icons\\/RedCard\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/rankings\\/icons\\/YellowCard\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/rankings\\/([^/]+?)\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/rankings\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/regulations\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/results\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/teams\\/([^/]+?)\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/teams\\/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/2025\\/teamsandresults\\/?$",
+			"dest": "_render"
+		}
+	]
+}
