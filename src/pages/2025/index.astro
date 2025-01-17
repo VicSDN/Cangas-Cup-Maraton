@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Video from "../../sections/Video.astro";
+import Intro from "../../sections/Intro.astro";
+import Bento from "../../sections/Bento.astro";
+import PreviousPoster from "../../sections/PreviousPoster.astro";
+import Sponsors from "../../components/Sponsors.astro";
+export const prerender = true;
+---
+
+<Layout
+  description="Bienvenido a las Cangas Cup 2024, un fin de semana que se te pasará volando"
+  title="Cangas Cup Futsal 2024"
+>
+  <main>
+    <Video class="no-select" />
+    <PreviousPoster style="z-index-20" />
+    <Intro />
+    <Bento />
+    <Sponsors />
+  </main>
+</Layout>
+
+<style>
+  body {
+    background-color: black;
+  }
+</style>

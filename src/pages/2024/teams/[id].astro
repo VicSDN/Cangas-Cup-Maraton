@@ -1,7 +1,7 @@
 ---
-import ButtonBack from "../../components/ButtonBack.astro";
-import { supabase } from "../../db/supabase";
-import Layout from "../../layouts/Layout.astro";
+import ButtonBack from "../../../components/ButtonBack.astro";
+import { supabase } from "../../../db/supabase";
+import Layout from "../../../layouts/Layout.astro";
 let { id } = Astro.params;
 
 let { data: team, error: teamError } = await supabase
