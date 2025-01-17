@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/2025",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*).(avif|webp|svg|png|jpg|gif)",
