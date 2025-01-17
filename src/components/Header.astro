@@ -7,8 +7,8 @@ import { MOBILE_MENU_CONTENT_ID } from "../consts/mobile-menu";
 const pages = [
   { name: "Equipos y Resultados", href: "/teamsandresults" },
   {
-    name: "Multimedia",
-    href: "/results",
+    name: "Age",
+    href: "/",
     disabled: true,
     soonDate: "Próximamente",
   },
@@ -33,25 +33,41 @@ const pages = [
     {
       pages.map(({ disabled, name, href, active, soonDate }, key) => (
         <>
-          <a
-            href={href}
-            class:list={[
-              "nav-item relative hidden h-full select-none flex-col items-center justify-center gap-1 text-center text-xl uppercase lg:flex lg:px-7 xl:px-10",
-              { "pointer-events-none": disabled },
-              { "current-page text-accent": active },
-              { "text-white": !active },
-            ]}
-            id={`nav-link-${key}`}
-          >
-            <span class="z-10">{name}</span>
-            {disabled ? (
-              <span class="absolute mt-10 -skew-x-6 text-xs text-accent">
-                {soonDate}
-              </span>
-            ) : (
-              <div class="background absolute -z-10 h-full w-full" />
-            )}
-          </a>
+          {name === "Age" ? (
+            <div class="relative flex flex-col items-center justify-center gap-1 text-center text-xl uppercase lg:flex lg:px-7 xl:px-10">
+              <label for="year-selector" class="text-white">
+                Edicion
+              </label>
+              <select
+                id="year-selector"
+                class="bg-transparent border-b-2 border-white text-white text-xl"
+                onchange="window.location.href = '/' + this.value"
+              >
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+              </select>
+            </div>
+          ) : (
+            <a
+              href={href}
+              class:list={[
+                "nav-item relative hidden h-full select-none flex-col items-center justify-center gap-1 text-center text-xl uppercase lg:flex lg:px-7 xl:px-10",
+                { "pointer-events-none": disabled },
+                { "current-page text-accent": active },
+                { "text-white": !active },
+              ]}
+              id={`nav-link-${key}`}
+            >
+              <span class="z-10">{name}</span>
+              {disabled ? (
+                <span class="absolute mt-10 -skew-x-6 text-xs text-accent">
+                  {soonDate}
+                </span>
+              ) : (
+                <div class="background absolute -z-10 h-full w-full" />
+              )}
+            </a>
+          )}
           {key === 1 && <div class:list={"hidden w-64 lg:block"} />}
         </>
       ))

@@ -5,7 +5,7 @@ import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind(),],
+  integrations: [react(), tailwind()],
   output: 'server',
   adapter: vercel({
     webAnalytics: {
@@ -13,5 +13,10 @@ export default defineConfig({
     },
     maxDuration: 8,
   }),
-  prefetch: true ,
+  vite: {
+    ssr: {
+      noExternal: ['@fontsource-variable/onest'],
+    },
+  },
+  prefetch: true,
 });
